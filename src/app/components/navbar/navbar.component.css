@@ -1,0 +1,123 @@
+.NavTriggerArea {
+    position: fixed;
+    width: 0vw;
+    height: 100vh;
+    z-index: 2;
+    left: 0;
+}
+
+.navBackButton {
+    position: fixed;
+    right: 0;
+    bottom: 5vh;
+    /* background-color: #4d8f63; */
+    background-color: var(--main);
+    padding: 2.5%;
+    border-radius: 50px 0px 0px 50px;
+
+    color: white;
+    width: 10vw;
+    z-index: 3;
+    /* font-family: ABeeZee; */
+}
+
+.navbarPopHamburgeIcon {
+    all: unset;
+
+    position: fixed;
+    top: 2.5vw;
+    right: 2.5vw;
+    /* width: 10vw;
+    height: 10vw; */
+    z-index: 3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.navbar {
+    /* background-color: #3f51b5; */
+    width: 0vw;
+    color: aliceblue;
+    padding: 2%;
+}
+
+.navbarContentList {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+.navbarContainer {
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    position: fixed;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-self: start;
+
+    width: 0vw;
+    height: 100vh;
+    background-color: #4d8f63b5;
+    opacity: 0;
+
+    transition-duration: 0.7s;
+    box-shadow: 0vw 0.2vh #888888;
+
+    /* overflow:hidden; */
+}
+
+.navbarContentItem {
+    color: white;
+    height: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Abel;
+    font-size: large;
+    font-weight: 400;
+    line-height: 61px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 1px, rgb(51, 51, 51) 0px 0px 0px 1.5px;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}

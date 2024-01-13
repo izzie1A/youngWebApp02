@@ -1,0 +1,24 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+<button class="navbarPopHamburgeIcon" (click)="0">
+    <div class="container" (click)="expanNavbar(navbarDiv,NavTriggerArea);navBarClick(hamburgerIconDiv);"
+        #hamburgerIconDiv>
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</button>
+<!-- <div (click)="expanNavbar(navbarDiv,NavTriggerArea)" class="NavTriggerArea "  #NavTriggerArea></div> -->
+
+<div (click)="expanNavbar(navbarDiv,NavTriggerArea);navBarClick(hamburgerIconDiv)" class="NavTriggerArea "
+    #NavTriggerArea></div>
+
+<div class="navbarContainer" #navbarDiv>
+    <div class="navbarContentItem" *ngFor="let navItem of navbarGidContainer">
+        <a class="hClick" routerLink="/{{navItem.dir}}">{{navItem.displayName}}</a>
+    </div>
+</div>
+
+<div *ngIf="atHomePage== false" class="navBackButton flexCenter" routerLink="/{{routerUrl.toString()}}">
+    <a>Back</a>
+</div>
