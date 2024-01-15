@@ -1,0 +1,151 @@
+/* header */
+/* header */
+.ourProjectHeader {
+    color: green;
+    font-size: larger;
+  }
+  
+  .ourProjectHeaderIcon {
+    color: green;
+    width: 10vw;
+    height: 10vw;
+    margin: 5%;
+    background-color: white;
+  }
+  
+  .ourProjectHeaderTitle {
+    color: green;
+    font-family: Cocogoose;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 91px;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  /* item */
+  
+  .ourProjectItem {
+    height: 40vmax;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 4ch;
+    position: relative;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1.5px; */
+    overflow: hidden;
+  }
+  
+  .itemContent {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .itemContent2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .itemContentImg {
+    /* max-width: 100%;
+    height: 100%; */
+    max-height: 100%;
+    max-width: 100%;
+    /* width: 100%; */
+  }
+  
+  /* lhs */
+  .xxy {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .ourProjectContentBackgroundImgframe {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .ourProjectContentBackgroundImg {
+    max-width: 50vw;
+    /* max-height: 100%; */
+  }
+  
+  .ourProjectContentTitle {
+    /* position: absolute; */
+    top: 40%;
+    right: 0%;
+    background-color: #F0F0F0;
+    padding: 5%;
+    width: min(50%,500px);
+    margin:2%;
+    border-radius: 1vw 0vw 0vw 1vw;
+    box-shadow: 2px 1px 3px 0px black;
+  }
+  
+  /* rhs */
+  .ourProjectContenImgArrayContainer {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /* display: grid;
+    grid-template-rows: 80% 20%; */
+  
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: 40vh;
+  }
+  
+  .ourTeamImgFrame {
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .ourTeamImg {
+    max-height: 100%;
+    border-radius: 2.5vw;
+  }
+  
+  .ourProjectImgPannal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .material-symbols-outlined{
+    font-size: 2ch;
+  }
+  
+  
+  
+  @media only screen and (min-width: 700px) {
+    .ourProjectItem {}
+  
+    .ourProjectContentBackground {
+      max-height: 70vh;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 1500px) {
+    .ourProjectItem {}
+  
+    .ourProjectContentBackground {
+      max-height: 90vh;
+    }
+  }

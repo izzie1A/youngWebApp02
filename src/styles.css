@@ -17,12 +17,10 @@ body {
     --lightGray: #cccccc;
     --dark: #4d4d4d;
 
-    --yung:#005E20;
-
     --seaSick: #e9e8e2;
     --sickSea: var(--dark);
 
-    --main: var(--yung);
+    --main: #005E20;
     --mainText: var(--seaSick);
     --sub: #bebebe;
     --subText: var(--dark);
@@ -30,9 +28,9 @@ body {
     --bg: var(--white);
     --histarri: var(--yellow);
 
-    --title: 24px;
-    --context: 15px;
-    --keyValue: 12px;
+    --title: 3ch;
+    --context: 2ch;
+    --keyValue: 1ch;
 
     --screenS: 700px;
     --screenM: 1200px;
@@ -45,4 +43,185 @@ body {
     --boxShadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     --boxShadow2: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     --boxShadow3: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+/* flex */
+.flexStart {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexAround {
+    display: flex;
+    padding-right: 5%;
+    padding-left: 5%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flexEven {
+    display: flex;
+    padding-right: 5%;
+    padding-left: 5%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.flexList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.keyValue {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-content: center;
+    justify-content: space-around;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* text style */
+.itemCardTitle {
+    font-size: var(--title);
+}
+
+.itemCardContent {
+    font-size: var(--content);
+}
+
+.itemCardValue {
+    font-size: var(--value);
+}
+
+
+.itemButton {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5%;
+    font-size: var(--value);
+
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+        transform 0.1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+}
+
+.itemButton:active {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0.5vh 0px 0px;
+}
+
+.itemButton:focus {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0.5vh 0px 0px;
+    color: var(--yellow);
+}
+
+.itemButton:hover {
+    background-color: rgba(6, 24, 44, 0.4);
+    border-radius: 100vh;
+    color: var(--yellow);
+}
+
+
+.hClick {
+    all: unset;
+}
+
+.hClick:active {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0.5vh 0px 0px;
+}
+
+.hClick:focus {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0.5vh 0px 0px;
+    color: var(--yellow);
+}
+
+.hClick:hover {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0.5vh 0px 0px;
+}
+
+
+@media only screen and (min-width: 700px) {
+    :root {
+        --imgS: 12px;
+        --imgM: 120px;
+        --imgL: 240px;
+
+        --title: 4ch;
+        --context: 3ch;
+        --keyValue: 2ch;
+    }
+
+    .itemCardTitle {
+        font-size: 8ch;
+    }
+
+    .itemCardContent {
+        font-size: 4ch;
+    }
+
+    .itemCardValue {
+        font-size: 3ch;
+    }
+
+    .itemImageFrame {
+        height: 60px;
+        width: 60px;
+    }
+
+    .itemCardImageFrameContent {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    :root {
+        --imgS: 12px;
+        --imgM: 120px;
+        --imgL: 240px;
+        --title: 5ch;
+        --context: 4ch;
+        --keyValue: 3ch;
+    }
+
+    .itemCardTitle {
+        font-size: 8ch;
+    }
+
+    .itemCardContent {
+        font-size: 5ch;
+    }
+
+    .itemCardValue {
+        font-size: 4ch;
+    }
+
+    .itemImageFrame {
+        height: 100px;
+        width: 100px;
+    }
 }

@@ -1,1 +1,62 @@
-<p>our-project works!</p>
+<div class="ourProjectHeader flexAround">
+    <img class=" ourProjectHeaderIcon"
+        src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
+    <div class="ourProjectHeaderTitle">
+        {{headerTitle}}
+    </div>
+</div>
+
+<div class="">
+    <button class="buttonAble colorGray" *ngIf="ourProjectHolderState=='Completed'"
+        (click)="selectTeamList('Current')">Current Project</button>
+    <button class="buttonAble colorGreen" *ngIf="ourProjectHolderState!='Completed'"
+        (click)="selectTeamList('Current')">Current Project</button>
+    <button class="buttonAble colorGreen" *ngIf="ourProjectHolderState!='Current'"
+        (click)="selectTeamList('Completed')">Completed Project</button>
+    <button class="buttonAble colorGray" *ngIf="ourProjectHolderState=='Current'"
+        (click)="selectTeamList('Completed')">Completed Project</button>
+</div>
+
+<div class="itemCardPadding">
+    <div *ngFor="let ourProjectContainer of ourTeamList; index as i;">
+        <div class="ourProjectItem " *ngIf="i%2==0">
+            <div class="itemContent">
+                <img class="itemContentImg " src="{{ourProjectContainer.background}}">
+            </div>
+            <div class="itemContent2" [style]="'align-items: flex-start;'">
+                <div class="ourProjectContentTitle" [style]="'right:0;left:inherit;border-radius: 0vw 1vw 1vw 0vw;'">
+                    <!-- <a [routerLink]="['/ourProjectDetail',ourProjectContainer.address]">{{ourProjectContainer.name}}</a> -->
+
+                    <a *ngIf="ourProjectHolderState!='Current'" class="itemCardContent" [routerLink]="'/ourProjectDetail/'+ourProjectContainer.address"> {{ourProjectContainer.name}} </a>
+                    <a *ngIf="ourProjectHolderState=='Current'" class="itemCardContent" href="{{ourProjectContainer.fileURL}}">{{ourProjectContainer.name}}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ourProjectItem " *ngIf="i%2!=0">
+            <div class="itemContent2" [style]="'align-items: flex-end;'">
+                <div class="ourProjectContentTitle" [style]="'left:0;right:inherit;border-radius: 1vw 0vw 0vw 1vw;'">
+                    <a *ngIf="ourProjectHolderState!='Current'" class="itemCardContent" [routerLink]="'/ourProjectDetail/'+ourProjectContainer.address"> {{ourProjectContainer.name}} </a>
+                    <a *ngIf="ourProjectHolderState=='Current'" class="itemCardContent" href="{{ourProjectContainer.fileURL}}">{{ourProjectContainer.name}}</a>
+                </div>
+            </div>
+            <div class="itemContent" [style]="'align-items: flex-end;'">
+                <img class="itemContentImg " src="{{ourProjectContainer.background}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .colorGray {
+        background-color: var(--white);
+        color: black;
+    }
+
+    .colorGreen {
+        background-color: var(--main);
+        color: white;
+    }
+</style>

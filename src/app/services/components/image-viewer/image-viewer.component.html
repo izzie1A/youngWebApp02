@@ -1,0 +1,63 @@
+<div class="imageViewer">
+    <div class="imageViewerFlex">
+        <button *ngIf="imageList.length!=0" class="material-symbols-outlined itemButton"
+            (click)="viewImageListSwitch(-1)">
+            arrow_back_ios
+        </button>
+        <div>
+            <div class="imageViewerImageFrame" [style]="'position:relative;'">
+                <img *ngIf="imageList.length!=0" class="imageViewerImage" [src]="imageList[viewerIndex]">
+                <img *ngIf="imageList.length==0" class="imageViewerImage" [src]="image">
+                <button class="itemButton" (click)="viewImage();viewImageList([])"
+                    [style]="'position:absolute;right:0;top:0;'">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+            <div class="flexEven" *ngIf="imageList.length<5">
+                <div *ngFor="imgListIndex of imageList; let i = index">
+                    <span *ngIf="i==viewerIndex" class="material-symbols-outlined">
+                        radio_button_checked
+                    </span>
+
+                    <span *ngIf="i!=viewerIndex" class="material-symbols-outlined">
+                        radio_button_unchecked
+                    </span>
+                </div>
+            </div>
+            <div class="flexEven" *ngIf="imageList.length>5">
+                <b class="itemButton"  [style]="'color:var(--yellow);background-color:gray;border-radius:1000px;'" >
+                    {{viewerIndex}}
+                </b>
+            </div>
+        </div>
+        <button *ngIf="imageList.length!=0" class="material-symbols-outlined itemButton"
+            (click)="viewImageListSwitch(1)">
+            arrow_forward_ios
+        </button>
+    </div>
+
+    <div class="viewerBackground" (click)="viewImage();viewImageList([])"></div>
+</div>
+
+<!-- <div class="ourProjectImgPannal ">
+    <button class="itemButton" (click)="clickImgSwitchButton(ourProjectContainer,-1)">
+        <span class="material-symbols-outlined">arrow_back_ios</span>
+    </button>
+    <div class="" *ngFor="imgListIndex of ourProjectContainer.imgList; let i = index">
+        <div *ngIf="i==ourProjectContainer.imgListIndex">
+            <span class="material-symbols-outlined">
+                radio_button_checked
+            </span>
+        </div>
+        <div *ngIf="i!=ourProjectContainer.imgListIndex">
+            <span class="material-symbols-outlined">
+                radio_button_unchecked
+            </span>
+        </div>
+    </div>
+
+    <button class="itemButton" (click)="clickImgSwitchButton(ourProjectContainer,1)">
+        <span class="material-symbols-outlined">arrow_forward_ios</span>
+    </button> -->

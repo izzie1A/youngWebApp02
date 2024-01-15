@@ -24,6 +24,8 @@ import { OurClientComponent } from './components/slides/our-client/our-client.co
 import { OurProjectComponent } from './components/slides/our-project/our-project.component';
 import { OurProjectDetailComponent } from './components/slides/our-project-detail/our-project-detail.component';
 import { OurTeamComponent } from './components/slides/our-team/our-team.component';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { ImageViewerComponent } from './services/components/image-viewer/image-viewer.component';
 
 @NgModule({
   declarations: [
@@ -41,20 +43,21 @@ import { OurTeamComponent } from './components/slides/our-team/our-team.componen
     OurProjectComponent,
     OurProjectDetailComponent,
     OurTeamComponent,
+    ImageViewerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideFirebaseApp(() => initializeApp({"projectId":"camera-af868","appId":"1:129701599624:web:e81d35789ae33c9e7f823d","databaseURL":"https://camera-af868-default-rtdb.firebaseio.com","storageBucket":"camera-af868.appspot.com","locationId":"us-central","apiKey":"AIzaSyAn4xbkq-uPWA7PZzbfJO1FJv1AWvrmYLY","authDomain":"camera-af868.firebaseapp.com","messagingSenderId":"129701599624","measurementId":"G-2ZNXLJ4GG0"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
