@@ -158,6 +158,13 @@ body {
     text-overflow: ellipsis;
 }
 
+.itemCardPadding {
+    padding: 2%;
+}
+
+.itemCardMargin {
+    margin: 2%;
+}
 /* text style */
 .itemCardTitle {
     font-size: var(--title);

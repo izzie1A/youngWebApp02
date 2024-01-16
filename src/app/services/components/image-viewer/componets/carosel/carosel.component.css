@@ -12,8 +12,6 @@
 }
 
 .tItem {
-    /* width:100px;
-    height:100px; */
     background-color: red;
     padding: 5%;
 }
@@ -21,8 +19,22 @@
 .tItemContainer {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 80%;
+    grid-auto-columns: 100%;
     overflow-y: auto;
     gap: var(--title);
     margin: 5%;
+}
+.ourClientFooterDot{
+    width: 1ch;
+    height: 1ch;
+    margin:0.5ch;
+    border-radius: 1000px;
+    background-color: var(--main);
+}
+.ourClientFooterDotOff{
+    width: 1ch;
+    height: 1ch;
+    margin:0.5ch;
+    border-radius: 1000px;
+    background-color: var(--sub);
 }
