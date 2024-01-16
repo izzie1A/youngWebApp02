@@ -1,0 +1,28 @@
+.carousel {
+    scroll-snap-type: x mandatory;
+}
+
+.carousel .item {
+    scroll-snap-align: start;
+    inline-size: min(100% -4rem, 70rem);
+}
+
+.carouselImage {
+    margin: 1%;
+}
+
+.tItem {
+    /* width:100px;
+    height:100px; */
+    background-color: red;
+    padding: 5%;
+}
+
+.tItemContainer {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+    overflow-y: auto;
+    gap: var(--title);
+    margin: 5%;
+}

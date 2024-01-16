@@ -51,7 +51,7 @@ export class OurClientComponent {
   //   }
   // }
   pageSwitch(direction: number) {
-    const maxPageIndex = this.pageItemArray.length + 3;
+    const maxPageIndex = this.pageItemArray.length + 0;
     let ans = this.pageCounter + direction;
   
     if (ans >= 0 && ans < maxPageIndex) {

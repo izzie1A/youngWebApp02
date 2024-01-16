@@ -9,6 +9,8 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ItemCardComponent } from './components/item-cards/item-card/item-card.component';
@@ -26,6 +28,7 @@ import { OurProjectDetailComponent } from './components/slides/our-project-detai
 import { OurTeamComponent } from './components/slides/our-team/our-team.component';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { ImageViewerComponent } from './services/components/image-viewer/image-viewer.component';
+import { CaroselComponent } from './services/components/image-viewer/componets/carosel/carosel.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +47,11 @@ import { ImageViewerComponent } from './services/components/image-viewer/image-v
     OurProjectDetailComponent,
     OurTeamComponent,
     ImageViewerComponent,
+    CaroselComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),

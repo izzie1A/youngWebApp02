@@ -10,6 +10,7 @@ import { OurProjectComponent } from './components/slides/our-project/our-project
 import { OurProjectDetailComponent } from './components/slides/our-project-detail/our-project-detail.component';
 import { OurTeamComponent } from './components/slides/our-team/our-team.component';
 
+import {trigger, animate, style, group, animateChild, query, stagger, transition, state} from '@angular/animations';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
