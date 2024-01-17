@@ -1,3 +1,4 @@
+
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
@@ -27,8 +28,9 @@ import { OurProjectComponent } from './components/slides/our-project/our-project
 import { OurProjectDetailComponent } from './components/slides/our-project-detail/our-project-detail.component';
 import { OurTeamComponent } from './components/slides/our-team/our-team.component';
 import { getStorage, provideStorage } from '@angular/fire/storage';
-import { ImageViewerComponent } from './services/components/image-viewer/image-viewer.component';
-import { CaroselComponent } from './services/components/image-viewer/componets/carosel/carosel.component';
+
+import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
+import { CaroselComponent } from './components/carosel/carosel.component';
 
 @NgModule({
   declarations: [
