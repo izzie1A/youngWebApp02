@@ -31,6 +31,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 import { CaroselComponent } from './components/carosel/carosel.component';
+import { YungCertGallaryComponent } from './components/yung-cert-gallary/yung-cert-gallary.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CaroselComponent } from './components/carosel/carosel.component';
     OurTeamComponent,
     ImageViewerComponent,
     CaroselComponent,
+    YungCertGallaryComponent,
   ],
   imports: [
     BrowserModule,

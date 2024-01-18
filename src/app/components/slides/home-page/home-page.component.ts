@@ -37,4 +37,5 @@ export class HomePageComponent {
       email:"company@fujichina.com",
     },
   ]
+  contactUsItemListChinese = [];
 }
