@@ -5,15 +5,18 @@
 .carousel .item {
     scroll-snap-align: start;
     inline-size: min(100% -4rem, 70rem);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
 }
 
 .carouselImage {
-    margin: 1%;
+    /* margin: 2%; */
+    max-width: 98%;
 }
 
 .tItem {
-    background-color: red;
-    padding: 5%;
+    /* padding: 5%; */
 }
 
 .tItemContainer {
@@ -24,17 +27,27 @@
     gap: var(--title);
     margin: 5%;
 }
-.ourClientFooterDot{
+
+.ourClientFooterDot {
     width: 1ch;
     height: 1ch;
-    margin:0.5ch;
+    margin: 0.5ch;
     border-radius: 1000px;
     background-color: var(--main);
 }
-.ourClientFooterDotOff{
+
+.ourClientFooterDotOff {
     width: 1ch;
     height: 1ch;
-    margin:0.5ch;
+    margin: 0.5ch;
     border-radius: 1000px;
     background-color: var(--sub);
 }
+
+#scrollableDiv {
+    height: 100px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+}
+
+
