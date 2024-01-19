@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StateService } from 'src/app/services/state.service'
 
 @Component({
   selector: 'app-home-page',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 
 export class HomePageComponent {
+
+  
   contactsUsItemList = [
     {
       egName: "Hong Kong Office",
@@ -14,7 +17,6 @@ export class HomePageComponent {
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/hkTransparentMap.png?alt=media&token=ec0eb74e-fae0-4a89-b265-f982df657e7e",
       englishAddress: "18/F Sunshine Plaza	353 Lockhart Road, Wanchai,	Hong Kong",
       chineseAddress: "上海市靜安區恆豐路638號蘇河一號1918室",
-      // phoneNumber: "Tel: (852) 2866 6283  Fax: (852) 2866 6732",
       egTelephone: "Tel: (852) 2866 6283 ",
       zhTelephone: "電話: (852) 2866 6283 ",
       egFax: "Fax: (852) 2866 6732",
@@ -33,39 +35,21 @@ export class HomePageComponent {
     },
     {
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
-      // egName: "Macau Office",
-      // zhName: "澳門辦公室",
-      // englishAddress: "18/F Sunshine Plaza	353 Lockhart Road, Wanchai,	Hong Kong",
-      // chineseAddress: "上海市靜安區恆豐路638號蘇河一號1918室",
-      egTelephone: "'",
+      egTelephone: "'", 
       zhTelephone: "'",
       egFax: "'",
       zhFax: "'",
-
       egName: "Beijing Office",
       zhName: "北京辦公室",
       englishAddress: "No.43 Anlelin Road, Dongcheng District, Beijing, China",
       chineseAddress: "北京市東城區安樂林路43號",
     },
-    // {
-    //   egName: "Macau Office",
-    //   zhName: "澳門辦公室",
-    //   imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
-    //   address: "",
-    //   phoneNumber: "Tel: (853) 2875 2730  Fax: (853) 2875 2930",
-    //   email: "company@fujichina.com",
-    // },
     {
       name: "Shanghai Office",
       zhName: "上海辦公室",
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
       englishAddress: "Room 1918, No.638 Hengfeng Road, Suhe No.1, Jing An District, Shanghai, China 200070",
       chineseAddress: "上海市靜安區恆豐路638號蘇河一號1918室",
-      telephone: "(86) 21-5258 5002",
-      // zhTelephone: "電話: (86) 21-5258 5002",
-      // fax: "(86) 21-5258 5801",
-      // zhFax: "傳真: (86) 21-5258 5801",
-
       egTelephone: "Tel:(86) 21-5258 5002",
       zhTelephone: "電話:(86) 21-5258 5002",
       egFax: "Fax: (86) 21-5258 5801",
@@ -89,21 +73,22 @@ export class HomePageComponent {
 
   xList: contactUsOffice[] = [];
   // x = new ("Beijing Office","北京辦公室",this.imageUrl)
-  constructor() {
-    this.xList.push(new contactUsOffice("Beijing Office",
-      "北京辦公室",
-      "No.43 Anlelin Road,Dongcheng District, Beijing,China",
-      "北京市東城區 安樂林路43號",
-      "",
-      "",
-      this.imageUrl));
-    this.xList.push(new contactUsOffice("Beijing Office",
-      "北京辦公室",
-      "Shanghai,China 200070,Suhe No.1,Jing An District,Room 1918,No.638 Hengfeng Road,",
-      "上海市靜安區恆豐路638號 蘇河一號1918室",
-      "",
-      "",
-      this.imageUrl));
+  constructor(stateService:StateService) {
+    // this.xList.push(new contactUsOffice("Beijing Office",
+    //   "北京辦公室",
+    //   "No.43 Anlelin Road,Dongcheng District, Beijing,China",
+    //   "北京市東城區 安樂林路43號",
+    //   "",
+    //   "",
+    //   this.imageUrl));
+    // this.xList.push(new contactUsOffice("Beijing Office",
+    //   "北京辦公室",
+    //   "Shanghai,China 200070,Suhe No.1,Jing An District,Room 1918,No.638 Hengfeng Road,",
+    //   "上海市靜安區恆豐路638號 蘇河一號1918室",
+    //   "",
+    //   "",
+    //   this.imageUrl));
+    
   }
 }
 class contactUsOffice2 {

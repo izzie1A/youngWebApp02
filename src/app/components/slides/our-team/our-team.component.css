@@ -57,11 +57,11 @@
 
 .teamListContainer {
     padding: 5%;
-    display: grid;
+    /* display: grid;
     justify-content: space-evenly;
     overflow: hidden;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5%;
+    gap: 5%; */
 }
 
 .teamListContentTitle {}
@@ -93,4 +93,9 @@
     flex-direction: column;
     align-items: center;
 
+}
+
+
+.teamListContainerImage{
+    max-width:100%;
 }

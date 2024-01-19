@@ -9,6 +9,7 @@ import { FirebaseControlService } from "src/app/services/firebase-control.servic
 })
 export class OurTeamComponent {
   teamListSelector: any = 'HonKongMacau';
+  ourTeamDisplayImageURL: string = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign.png?alt=media&token=5b3fe704-f6f6-40b6-9de8-5e293c387fe3';
   // itemCardArrayContainer: any[] = []
   ourTeamList: teamMember[] = [];
 
@@ -21,10 +22,12 @@ export class OurTeamComponent {
       case "HonKongMacau":
         this.teamListSelector = input;
         this.getTeamMemberList('yungFolder/ourTeam/chinaTeamMember');
+        this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign.png?alt=media&token=5b3fe704-f6f6-40b6-9de8-5e293c387fe3';
         break;
-        case "China":
-          this.teamListSelector = input;
-          this.getTeamMemberList('yungFolder/ourTeam/hkMacauTeamMember');
+      case "China":
+        this.teamListSelector = input;
+        this.getTeamMemberList('yungFolder/ourTeam/hkMacauTeamMember');
+        this.ourTeamDisplayImageURL = "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign2.png?alt=media&token=4bc38144-04bf-4066-bc4a-cd037a5ad664"
         break;
     }
   }
@@ -35,6 +38,9 @@ export class OurTeamComponent {
       this.ourTeamList = x;
     });
   }
+
+
+
 }
 
 class teamMember {

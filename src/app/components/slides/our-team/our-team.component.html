@@ -1,6 +1,7 @@
 <div class="ourTeamImgFrame">
     <img class="ourTeamImg"
-        src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/ourTeamshutterstock_659142358%201.png?alt=media&token=390d7648-636f-48df-8ffd-e9df1a505e37">
+        src=
+        "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/ourTeamshutterstock_659142358%201.png?alt=media&token=390d7648-636f-48df-8ffd-e9df1a505e37">
     <div class="overlayColorDiv">
         <img class="ourTeamIcon"
             src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203.png?alt=media&token=e6987798-5673-4498-9c9d-75aa15f77752">
@@ -24,7 +25,7 @@
 </div>
 
 
-<div class="teamListContainer">
+<!-- <div class="teamListContainer">
     <div class="teamListItem" *ngFor="let x of ourTeamList">
         <img class="teamListImage" src="{{x.image}}">
         <div class="teamListContentContainer ">
@@ -36,4 +37,18 @@
             </a>
         </div>
     </div>
+</div> -->
+<div class="teamListContainer">
+    <img class="teamListContainerImage" src="{{ourTeamDisplayImageURL}}" >
+    <!-- <div class="teamListItem" *ngFor="let x of ourTeamList">
+        <img class="teamListImage" src="{{x.image}}">
+        <div class="teamListContentContainer ">
+            <h3 class="itemCardContent">
+                {{x.name}}
+            </h3>
+            <a class="itemCardValue">
+                {{x.description}}
+            </a>
+        </div>
+    </div> -->
 </div>
