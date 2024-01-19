@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./yung-cert-gallary.component.css']
 })
 export class YungCertGallaryComponent {
+  pageindex:number=0;  
 
 }

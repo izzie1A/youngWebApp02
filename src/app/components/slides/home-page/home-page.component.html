@@ -69,33 +69,29 @@
             </div>
         </div>
         <app-carosel></app-carosel>
-    </div>  
+    </div>
 
     <!-- contact us -->
-    <div class="contactUs">
-        <div class="homepageItemHeader flexCenter itemCardMargin" [style]="'background-color: #FFFFFF'">
+    <div class="contactUs ">
+        <div class="  " [style]="'background-color: #FFFFFF'">
             <div class=" flexList itemCardMargin ">
-                <h1 class="homepageOurteamHeaderTitle" [style]="'font-size:2ch;'">Contact Us</h1>
+                <a class="homepageOurteamHeaderTitle itemCardTitle">Contact Us</a>
                 <img class="homepageOurteamHeaderIcon" [style]="'padding:0;'"
                     src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
             </div>
         </div>
-        <div class="contactsUsItemList flexAround itemCardPadding">
-            <div class="flexList" *ngFor="let x of contactsUsItemList">
-                <h1 class="itemCardTitle">
-                    {{x.name}}
-                </h1>
+        <div class="contactsUsItemList  itemCardPadding">
+            <div class="flexList item" *ngFor="let x of contactsUsItemList">
+                <b class="itemCardContent">
+                    {{x.zhName}}
+                </b>
                 <div class="contactsUsItemImgFrame ">
-                    <img class="contactsUsItemImg" [src]="x.image">
+                    <img class="contactsUsItemImg" [src]="x.imageURL">
                 </div>
-                <a class="itemCardContent">
-                    {{x.address}}
-                </a>
-                <a class="itemCardContent">
-                    {{x.phoneNumber}}
-                </a>
+                <a class="itemCardValue">{{x.englishAddress}}</a>
+                <a class="itemCardValue">{{x.egTelephone}}</a>
+                <a class="itemCardValue">{{x.egFax}}</a>
             </div>
-            <div class="ourClientFooterDot"></div>
         </div>
     </div>
 </div>

@@ -1,6 +1,14 @@
 .yungCertGallaryContainer {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    height: min(60vh, 100ch);
+    justify-content: center;
+    align-items: center;
+}
+
+.yungCertGallaryContainer2 {
+    background-color: rgb(188, 214, 255);
+
 }
 
 .yungCertGallaryImage {
@@ -33,4 +41,3 @@
     background-color: red;
     color: black;
 }
-kj.bjklhjklb

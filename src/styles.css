@@ -29,7 +29,7 @@ body {
     --histarri: var(--yellow);
 
     --title: 3ch;
-    --context: 2ch;
+    --content: 2ch;
     --keyValue: 1ch;
 
     --screenS: 700px;
@@ -52,22 +52,9 @@ body {
         --imgL: 240px;
 
         --title: 4ch;
-        --context: 3ch;
+        --content: 3ch;
         --keyValue: 2ch;
     }
-/* 
-    .itemCardTitle {
-        font-size: 8ch;
-    }
-
-    .itemCardContent {
-        font-size: 4ch;
-    }
-
-    .itemCardValue {
-        font-size: 3ch;
-    } */
-
     .itemImageFrame {
         height: 60px;
         width: 60px;
@@ -87,7 +74,7 @@ body {
         --imgM: 120px;
         --imgL: 240px;
         --title: 5ch;
-        --context: 4ch;
+        --content: 4ch;
         --keyValue: 3ch;
     }
 /* 
@@ -175,7 +162,7 @@ body {
 }
 
 .itemCardValue {
-    font-size: var(--value);
+    font-size: var(--keyValue);
 }
 
 
@@ -185,7 +172,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2.5%;
-    font-size: var(--value);
+    font-size: var(--keyValue);
 
     cursor: pointer;
     text-align: center;

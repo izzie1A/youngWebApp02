@@ -24,9 +24,9 @@
 }
 
 .homepageItemHeader {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    align-items: center;
+    /* display: grid; */
+    /* grid-template-columns: 20% 80%; */
+    /* align-items: center; */
 
     /* width: 100vw; */
 }
@@ -67,7 +67,6 @@
     align-items: center;
     justify-content: space-around;
     position: relative;
-    background-color: red;
 }
 
 .x {
@@ -118,7 +117,6 @@
 }
 
 .ourClientImg2 {
-    background-color: red;
 }
 
 .homepageItemHeader {
@@ -129,15 +127,33 @@
 }
 
 .contactsUsItemList{
-    
+    position:relative;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
 }
+
+.contactsUsItemList .item{
+    /* background-color: red; */
+    /* height:100%; */
+    min-height:max(20vh,20ch);
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    align-items: center;
+    justify-items: center;
+}
+
 .contactsUsItemImgFrame{
     position: relative;
     height:10vmin;
     
 }
 .contactsUsItemImg{
-    width: 100%;
+    max-width: 100%;
     max-height: 100%;
 }
 
