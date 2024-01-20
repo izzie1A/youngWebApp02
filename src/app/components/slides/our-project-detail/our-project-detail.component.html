@@ -1,6 +1,6 @@
 <app-image-viewer *ngIf="imageHolder!!||imageListHolder!!" [image]="imageHolder" [imageList]="imageListHolder"
     (newItemEvent)="viewImageList($event)"></app-image-viewer>
-    <!-- {{getTitle(getAddress)}} -->
+<!-- {{getTitle(getAddress)}} -->
 <div class="ourProjectDetailContainer">
     <div class="ourProjectDetailHeader">
     </div>
@@ -17,6 +17,18 @@
             <img class=" ourProjectDetailIcon" loading="lazy"
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
             <b class="ourProjectDetailTitle itemCardTitle">{{resultText}}</b>
+        </div>
+    </div>
+{{detailMenuSelector}}
+    <div class="flexAround">
+        <div *ngFor="let x of detailMenu">
+            <button class="hClick " (click)="detailMenuSelect(x)" >
+                <div class="flexList ">
+                    <img class=" ourProjectDetailIcon" loading="lazy"
+                        src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
+                    <b>{{x}}</b>
+                </div>
+            </button>
         </div>
     </div>
 

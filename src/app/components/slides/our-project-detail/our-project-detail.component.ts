@@ -3,6 +3,8 @@ import { Firestore, collectionData, collection, doc, deleteDoc, setDoc, getDoc} 
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router'
 import { switchMap } from 'rxjs/operators'
+import { FirebaseControlService} from "src/app/services/firebase-control.service";
+
 @Component({
   selector: 'app-our-project-detail',
   templateUrl: './our-project-detail.component.html',
@@ -23,8 +25,10 @@ export class OurProjectDetailComponent implements OnInit {
   projectState:string='';
   location:string='';
 
+  detailMenu = ['Department Store','Hotel','Restaurant','Theme Park']
+  detailMenuSelector = ''
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private fbs: FirebaseControlService,private route: ActivatedRoute, private router: Router) {
     let x = this.router.url.split('/')
     // this.getAddress = 'yungFolder/projectList/'+x[x.length - 1];
     this.getAddress = "yungFolder/ourProject/"+x[x.length - 1];
@@ -33,25 +37,46 @@ export class OurProjectDetailComponent implements OnInit {
     const itemCollection = collection(this.firestore,address);
     this.firebaseCollection = collectionData(itemCollection);
     this.getTitle(this.getAddress);
+    
+
+    this.t();
   }
 
   async ngOnInit() {
   }
-  
-  async switchProject() {
-    const docRef = doc(this.firestore, "yungFolder", "chinaProjectList");
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-      this.firestoreItemContainer = docSnap.data();
-    } else {
-      this.firestoreItemContainer = null;
-      console.log("No such document!");
-      this.firestoreItemContainer = {
-        title: 'no such document',
-      };
-    }
+  detailMenuSelect(input:string){
+    this.detailMenuSelector = input;
   }
+  async t() {
+    let result = await this.fbs.queryCondition('/yungFolder/ourClient/clientReference', 100, "name", "!=", 'null','name');
+    let pageItemlength = 9;
+    let pageItemArray = [];
+    console.warn(result)
+    for (let i = 0; i < result.length; i++) {
+      let subArray = []
+      for (let j = 0; j < pageItemlength; j++) {
+        i++;
+        console.log(i);
+        subArray.push(result[i]);
+      }
+      pageItemArray.push(subArray);
+    }
+    console.log(pageItemArray)
+  }
+  // async switchProject() {
+  //   const docRef = doc(this.firestore, "yungFolder", "chinaProjectList");
+  //   const docSnap = await getDoc(docRef);
+  //   if (docSnap.exists()) {
+  //     console.log("Document data:", docSnap.data());
+  //     this.firestoreItemContainer = docSnap.data();
+  //   } else {
+  //     this.firestoreItemContainer = null;
+  //     console.log("No such document!");
+  //     this.firestoreItemContainer = {
+  //       title: 'no such document',
+  //     };
+  //   }
+  // }
   
 // current
   getTitle(address:string){
@@ -84,7 +109,6 @@ export class OurProjectDetailComponent implements OnInit {
     }
     let result = this.projectState+' projects in ' + this.location;
     this.resultText =  result;
-
 
     switch(address){
       // current

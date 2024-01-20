@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { FirebaseControlService } from "src/app/services/firebase-control.service";
 
 @Component({
-  selector: 'app-our-project',
-  templateUrl: './our-project.component.html',
-  styleUrls: ['./our-project.component.css']
+	selector: 'app-our-project',
+	templateUrl: './our-project.component.html',
+	styleUrls: ['./our-project.component.css']
 })
 export class OurProjectComponent {
-  headerTitle = 'Our Project'
+	headerTitle = 'Our Project'
 
 	ourProjectList: OurProjectItem[] = [];
 
@@ -18,15 +18,10 @@ export class OurProjectComponent {
 	ourCompletedProject: OurProjectItem[] = [];
 
 	ourTeamList: OurProjectItem[] = [];
-	// projectItem$: Observable<any[]>;
-	// firestore: Firestore = inject(Firestore);
 
 	constructor(public fbS: FirebaseControlService) {
 		let address = 'yungFolder/pageControl/ourProjectCurrent'
-		// let address = 'yungFolder/pageControl/ourProjectCompleted'
 		this.getprojectList(address);
-		// const itemCollection = collection(this.firestore, 'yungFolder');
-		// this.projectItem$ = collectionData(itemCollection);
 		this.ourProjectHolder = this.ourCompletedProject;
 	}
 	getprojectList(address: string) {
@@ -42,10 +37,7 @@ export class OurProjectComponent {
 				);
 				console.log(hkCompleted);
 				this.ourTeamList.push(hkCompleted);
-				// x.imgListIndex=0;
-				// console.log(x);
 			})
-			// this.ourTeamList = x;
 		});
 	}
 	clickImgSwitchButton(input: OurProjectItem, direction: number) {
@@ -90,7 +82,7 @@ class OurProjectItem {
 	}
 	temGetAddress(title: string) {
 		let ans = "undefinded";
-		 switch (title) {
+		switch (title) {
 			case "Current project in Hong Kong":
 				ans = 'hkProjectListCurrent'
 				break;

@@ -23,19 +23,10 @@
     width: 100%;
 }
 
-.homepageItemHeader {
-    /* display: grid; */
-    /* grid-template-columns: 20% 80%; */
-    /* align-items: center; */
-
-    /* width: 100vw; */
-}
-
 .homepageOurteamContent {
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
-    /* width: 100vw; */
 }
 
 .homepageOurteamHeaderIcon {
@@ -116,9 +107,6 @@
     max-width: 100%;
 }
 
-.ourClientImg2 {
-}
-
 .homepageItemHeader {
     display: flex;
     flex-direction: row;
@@ -133,14 +121,7 @@
 }
 
 .contactsUsItemList .item{
-    /* background-color: red; */
-    /* height:100%; */
     min-height:max(20vh,20ch);
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-
     display: grid;
     grid-template-rows: repeat(4,1fr);
     align-items: center;
@@ -154,7 +135,8 @@
 }
 .contactsUsItemImg{
     max-width: 100%;
-    max-height: 100%;
+    /* max-height: 100%; */
+    height: 100%;
 }
 
 
@@ -191,14 +173,4 @@
 .contactsUsItemText{
     color: var(--main);
     font-size: 1ch;
-}
-
-@media only screen and (min-width: 700px) {
-    .contactsUsItemText{
-        font-size: 2ch;
-    }
-}
-
-@media only screen and (min-width: 1500px) {
-    
 }
