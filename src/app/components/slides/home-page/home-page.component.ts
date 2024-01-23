@@ -9,7 +9,7 @@ import { StateService } from 'src/app/services/state.service'
 
 export class HomePageComponent {
 
-  
+
   contactsUsItemList = [
     {
       egName: "Hong Kong Office",
@@ -19,42 +19,43 @@ export class HomePageComponent {
       chineseAddress: "上海市靜安區恆豐路638號蘇河一號1918室",
       egTelephone: "Tel: (852) 2866 6283 ",
       zhTelephone: "電話: (852) 2866 6283 ",
-      egFax: "Fax: (852) 2866 6732",
-      zhFax: "傳真: (852) 2866 6732",
+      egFax: "Email: company@fujichina.com",
+      zhFax: "Email: company@fujichina.com",
     },
     {
       egName: "Macau Office",
       zhName: "澳門辦公室",
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
-      englishAddress: "18/F Sunshine Plaza	353 Lockhart Road, Wanchai,	Hong Kong",
-      chineseAddress: "上海市靜安區恆豐路638號蘇河一號1918室",
+      englishAddress: "Alm. Dr. Carlos'd Assumpcao No. 180 / Tong Nam Ah Central Comercio,10G andar, Macau ",
+      chineseAddress: "澳門宋玉生廣場180號 / 東南亞商業中心",
       egTelephone: "Tel: (853) 2875 2730",
       zhTelephone: "電話: (853) 2875 2730",
-      egFax: "Fax: (853) 2875 2930",
-      zhFax: "傳真: (853) 2875 2930",
+      egFax: "Email: company@fujichina.com",
+      zhFax: "Email: company@fujichina.com",
     },
     {
-      imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
-      egTelephone: "'", 
-      zhTelephone: "'",
-      egFax: "'",
-      zhFax: "'",
-      egName: "Beijing Office",
-      zhName: "北京辦公室",
-      englishAddress: "No.43 Anlelin Road, Dongcheng District, Beijing, China",
-      chineseAddress: "北京市東城區安樂林路43號",
-    },
-    {
-      name: "Shanghai Office",
+      egName: "Shanghai Office",
       zhName: "上海辦公室",
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
-      englishAddress: "Room 1918, No.638 Hengfeng Road, Suhe No.1, Jing An District, Shanghai, China 200070",
-      chineseAddress: "上海市靜安區恆豐路638號蘇河一號1918室",
+      englishAddress: "Room 1918, No.638 Hengfeng Road / Suhe No.1, Jing An District, Shanghai, China 200070",
+      chineseAddress: "上海市靜安區恆豐路638號 / 蘇河一號1918室",
       egTelephone: "Tel:(86) 21-5258 5002",
       zhTelephone: "電話:(86) 21-5258 5002",
-      egFax: "Fax: (86) 21-5258 5801",
-      zhFax: "傳真: (86) 21-5258 5801",
-    }
+      egFax: "Email: company@fujichina.com",
+      zhFax: "Email: company@fujichina.com",
+    },
+    {
+      egName: "Beijing Office",
+      zhName: "北京办公室",
+      imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FbejingMap.png?alt=media&token=175db2d6-d263-4741-a18a-dd524cee62fc",
+
+      englishAddress: "No.43 Anlelin Road, Dongcheng District,Beijing, China ",
+      chineseAddress: "北京市東城區,安樂林路43號",
+      egTelephone: "Tel: 010-85115851",
+      zhTelephone: "電話: 010-85115851",
+      egFax: "Email: company@fujichina.com",
+      zhFax: "Email: company@fujichina.com",
+    },
   ]
   contactUsItemListZH = [];
   ourTeamTextZH = "本公司現有行政及技術職員40多人,以雄厚實力及專業技術滿足各發展商,承辦 商,建築師及設計師等的不同要求。";
@@ -66,24 +67,24 @@ export class HomePageComponent {
   ourProjectTextZH3 = "富士(中國)獲取ISO 9001品質管理證書,印證了本公司為顧客提供全面優質室內 裝飾工程施工管理的承諾,更標誌著本公司臻至國際認可標準的管理水平。";
   ourProjectTextEN = "Fuji (China) was incorporated in 1984 with its principal business in interior fitting-out and decoration services";
   ourProjectTextEN2 = "In the past years, we have successfully completed hundreds of reputable projects including hotel, cub houses, restaurants, retail outlets, commercial premises and service apartment in Hong Kong, Macau and Mainland China";
-  ourProjectTextEN3 = "Fuji (China) was awarded with 150 9001 certificates in project management architectural interior decoration. The award for Fuji (China) registers the company's outstanding tradition in quality assurance and that our company has achieved an internationally recognized sa for quality management standard.";
+  ourProjectTextEN3 = "Fuji (China) was awarded with ISO 9001 certificate in project management of interior decoration. The award for Fuji (China) registers the company's outstanding tradition in quality assurance and that our company has achieved an internationally recognized status for quality management stardard.";
   contactUsTextZH = "";
   contactUsTextEN = "";
   imageUrl: string = "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29";
 
-  homePageArrayBackUp=[
-    this.ourTeamTextZH,
-    this.ourTeamTextZH2,
-    this.ourTeamTextEN,
-    this.ourTeamTextEN2,
-    this.ourProjectTextZH,
-    this.ourProjectTextZH2,
-    this.ourProjectTextZH3,
-    this.ourProjectTextEN,
-    this.ourProjectTextEN2,
-    this.ourProjectTextEN3,
-  ]
-  homePageArray=[
+  // homePageArrayBackUp = [
+  //   this.ourTeamTextZH,
+  //   this.ourTeamTextZH2,
+  //   this.ourTeamTextEN,
+  //   this.ourTeamTextEN2,
+  //   this.ourProjectTextZH,
+  //   this.ourProjectTextZH2,
+  //   this.ourProjectTextZH3,
+  //   this.ourProjectTextEN,
+  //   this.ourProjectTextEN2,
+  //   this.ourProjectTextEN3,
+  // ]
+  homePageArray = [
     this.ourTeamTextEN,
     this.ourTeamTextEN2,
     this.ourProjectTextEN,
@@ -92,21 +93,22 @@ export class HomePageComponent {
   ]
   xList: contactUsOffice[] = [];
   // x = new ("Beijing Office","北京辦公室",this.imageUrl)
-  constructor(public stateService:StateService) {
+  constructor(public stateService: StateService) {
   }
-  changeLanguages(language:string): void {
+  
+  changeLanguages(language: string): void {
     this.stateService.changeLanguage(language);
     console.log(this.stateService.language);
-    if(this.stateService.language=='zh'){
-      this.homePageArray=[
+    if (this.stateService.language == 'zh') {
+      this.homePageArray = [
         this.ourTeamTextZH,
         this.ourTeamTextZH2,
         this.ourProjectTextZH,
         this.ourProjectTextZH2,
         this.ourProjectTextZH3,
       ]
-    } else if(this.stateService.language=='eg'){
-      this.homePageArray=[
+    } else if (this.stateService.language == 'eg') {
+      this.homePageArray = [
         this.ourTeamTextEN,
         this.ourTeamTextEN2,
         this.ourProjectTextEN,
@@ -138,7 +140,7 @@ export class contactUsOffice {
     egName: string,
     zhName: string,
     egAddress: string,
-    
+
     zhAddress: string,
     telephone: string,
     fax: string,

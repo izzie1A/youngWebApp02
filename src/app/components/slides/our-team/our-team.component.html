@@ -11,16 +11,16 @@
     </div>
 </div>
 <div>
-    <button class="buttonAble colorGreen" *ngIf="teamListSelector=='China'" (click)="selectTeamList('HonKongMacau')">
-        Hong kong & macau
+    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector=='China'" (click)="selectTeamList('HonKongMacau')">
+        Hong kong & Macau
     </button>
-    <button class="buttonAble colorGray" *ngIf="teamListSelector!='China'" (click)="selectTeamList('HonKongMacau')">
-        Hong kong & macau
+    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector!='China'" (click)="selectTeamList('HonKongMacau')">
+        Hong kong & Macau
     </button>
 
-    <button class="buttonAble colorGray" *ngIf="teamListSelector!='HonKongMacau'"
+    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector!='HonKongMacau'"
         (click)="selectTeamList('China')">China</button>
-    <button class="buttonAble colorGreen" *ngIf="teamListSelector=='HonKongMacau'"
+    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector=='HonKongMacau'"
         (click)="selectTeamList('China')">China</button>
 </div>
 
