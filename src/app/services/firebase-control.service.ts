@@ -1,7 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Firestore, collectionData, collection, updateDoc, getDocFromCache, deleteDoc } from '@angular/fire/firestore';
 import { DocumentData, WhereFilterOp, addDoc, doc, getDoc, getDocs, limit, orderBy, query, setDoc, where } from "firebase/firestore";
-// import { getStorage, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { Storage, getStorage, provideStorage, ref, uploadBytesResumable, getDownloadURL } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 
@@ -15,7 +14,7 @@ export class FirebaseControlService {
   constructor() {
     console.log('firebase control');
   }
-  async queryCondition(address: string, amountLimit: number, condton1: string, condton2: WhereFilterOp, condton3: string , orderby:string|'name'|'date') {
+  async queryCondition(address: string, amountLimit: number, condton1: string, condton2: WhereFilterOp, condton3: string, orderby: string | 'name' | 'date') {
     console.log(condton1);
     let result: DocumentData[] = [];
     const q = await query(
@@ -29,8 +28,6 @@ export class FirebaseControlService {
     });
     return result
   }
-
-
   // firestore curd
   async createCustomDoc(address: string, file: any) {
     const content = file;
@@ -109,10 +106,21 @@ export class FirebaseControlService {
     let img = "https://picsum.photos/" + r + "00/" + rx + "00";
     return img;
   }
-
   getCollectionValueChange(address: string) {
     const itemCollection = collection(this.firestore, address);
     return collectionData(itemCollection) as Observable<any[]>
   }
 
+  // testing
+  async writeUserData(address: string, file: any) {
+    // /yungFolder/ourProject/testHK
+    const docRef = await addDoc(collection(this.firestore, address),file);
+
+    // await setDoc(doc(this.firestore, "/yungFolder/ourProject/testHK", "LA"), {
+    //   name: "Los Angeles",
+    //   state: "CA",
+    //   country: "USA",
+    //   tag: ["USA", "USA2", "USA3"],
+    // });
+  }
 }

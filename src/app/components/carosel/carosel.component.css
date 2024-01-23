@@ -1,5 +1,13 @@
 .carousel {
     scroll-snap-type: x mandatory;
+
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    cursor: grab;
+    user-select: none;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
 }
 
 .carousel .item {
@@ -8,11 +16,17 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
+
+    min-height: 20vh;
 }
 
 .carouselImage {
     /* margin: 2%; */
     max-width: 98%;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    pointer-events: none;
 }
 
 .tItem {
@@ -25,7 +39,7 @@
     grid-auto-columns: 100%;
     overflow-y: auto;
     gap: var(--title);
-    margin: 5%;
+    /* margin: 5%; */
 }
 
 .ourClientFooterDot {
@@ -49,5 +63,3 @@
     overflow: scroll;
     border: 1px solid #ccc;
 }
-
-

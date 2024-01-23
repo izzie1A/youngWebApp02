@@ -81,7 +81,7 @@ export class HomePageComponent {
     //   "",
     //   "",
     //   this.imageUrl));
-    // this.xList.push(new contactUsOffice("Beijing Office",
+    // this.xList.push(new contactUsOffice("Beijing3ddddddsssssssssssOffice",
     //   "北京辦公室",
     //   "Shanghai,China 200070,Suhe No.1,Jing An District,Room 1918,No.638 Hengfeng Road,",
     //   "上海市靜安區恆豐路638號 蘇河一號1918室",
@@ -113,6 +113,7 @@ export class contactUsOffice {
     egName: string,
     zhName: string,
     egAddress: string,
+    
     zhAddress: string,
     telephone: string,
     fax: string,
