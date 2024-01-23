@@ -13,6 +13,8 @@ export class OurTeamComponent {
   // itemCardArrayContainer: any[] = []
   ourTeamList: teamMember[] = [];
 
+  
+
   constructor(private fbS: FirebaseControlService) {
     this.getTeamMemberList('yungFolder/ourTeam/chinaTeamMember');
   }

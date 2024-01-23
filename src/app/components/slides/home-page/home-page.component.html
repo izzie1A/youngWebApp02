@@ -16,21 +16,51 @@
         <img class="homepageContainerImage"
             src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage1.png?alt=media&token=197004a9-edb1-42b5-a57c-8a16b50e98d4">
     </div>
+    <div class="itemCardMargin">
+        <div class="itemCardMargin flexCenter " [style]="'justify-content: flex-start;'">
+            <span class=" material-symbols-outlined" [style]="'font-size:var(--title)'">
+                language
+            </span>
+            <button class=" itemCardTitle colorOn" *ngIf="this.stateService.language != 'zh'" (click)="changeLanguages('zh')">
+                <b>
+                    zh
+                </b>
+            </button>
+            <button class=" itemCardTitle colorOff" *ngIf="this.stateService.language == 'zh'" (click)="changeLanguages('zh')">
+                <b>
+                    zh
+                </b>
+            </button>
+            <button class=" itemCardTitle colorOn" *ngIf="this.stateService.language != 'eg'" (click)="changeLanguages('eg')">
+                <b>
+                    eg
+                </b>
+            </button>
+            <button class=" itemCardTitle colorOff" *ngIf="this.stateService.language == 'eg'" (click)="changeLanguages('eg')">
+                <b>
+                    eg
+                </b>
+            </button>
+        </div>
+    </div>
     <!-- homepageOurteam -->
     <div class="homepageOurteam">
         <div class="homepageItemHeader">
             <img class="homepageOurteamHeaderIcon"
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage2ourteamIcon.png?alt=media&token=a3a5f319-fec4-493f-9fb6-a59d50ab45e7">
             <b class="homepageOurteamHeaderTitle">OUR TEAM</b>
+
         </div>
 
         <div class="homepageOurteamContent">
             <div class="itemCardPadding">
 
-                <a class=" itemCardValue  ">{{ourTeamTextEN}} </a>
+                <!-- <a class=" itemCardValue  ">{{ourTeamTextEN}} </a> -->
+                <a class=" itemCardValue  ">{{homePageArray[0]}} </a>
                 <br>
                 <br>
-                <a class=" itemCardValue  "> {{ourTeamTextEN2}}</a>
+                <!-- <a class=" itemCardValue  "> {{ourTeamTextEN2}}</a> -->
+                <a class=" itemCardValue  ">{{homePageArray[1]}} </a>
             </div>
             <div class="itemCardPadding ">
                 <img class="homepageOurteamimage "
@@ -50,13 +80,20 @@
             <img class="homepageOurteamimage"
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homepage3ourproject.png?alt=media&token=5143fb61-6243-4e2b-9f5c-04dbbcaecdca">
             <div class="itemCardPadding">
-                <a class=" itemCardValue  ">{{ourProjectTextEN}} </a>
+                <!-- <a class=" itemCardValue  ">{{ourProjectTextEN}} </a> -->
+                <a class=" itemCardValue  ">{{homePageArray[2]}} </a>
+
                 <br>
                 <br>
-                <a class=" itemCardValue  "> {{ourProjectTextEN2}}</a>
+                <!-- <a class=" itemCardValue  "> {{ourProjectTextEN2}}</a> -->
+                <a class=" itemCardValue  ">{{homePageArray[3]}} </a>
+                <br>
+                <br>
+                <a class=" itemCardValue  ">{{homePageArray[4]}} </a>
+                
             </div>
         </div>
-        
+
         <div class="ourProjectImage"></div>
         <div class="ourProjectText"></div>
     </div>

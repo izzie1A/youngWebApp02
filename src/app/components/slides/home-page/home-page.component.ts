@@ -71,24 +71,49 @@ export class HomePageComponent {
   contactUsTextEN = "";
   imageUrl: string = "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29";
 
+  homePageArrayBackUp=[
+    this.ourTeamTextZH,
+    this.ourTeamTextZH2,
+    this.ourTeamTextEN,
+    this.ourTeamTextEN2,
+    this.ourProjectTextZH,
+    this.ourProjectTextZH2,
+    this.ourProjectTextZH3,
+    this.ourProjectTextEN,
+    this.ourProjectTextEN2,
+    this.ourProjectTextEN3,
+  ]
+  homePageArray=[
+    this.ourTeamTextEN,
+    this.ourTeamTextEN2,
+    this.ourProjectTextEN,
+    this.ourProjectTextEN2,
+    this.ourProjectTextEN3,
+  ]
   xList: contactUsOffice[] = [];
   // x = new ("Beijing Office","北京辦公室",this.imageUrl)
-  constructor(stateService:StateService) {
-    // this.xList.push(new contactUsOffice("Beijing Office",
-    //   "北京辦公室",
-    //   "No.43 Anlelin Road,Dongcheng District, Beijing,China",
-    //   "北京市東城區 安樂林路43號",
-    //   "",
-    //   "",
-    //   this.imageUrl));
-    // this.xList.push(new contactUsOffice("Beijing3ddddddsssssssssssOffice",
-    //   "北京辦公室",
-    //   "Shanghai,China 200070,Suhe No.1,Jing An District,Room 1918,No.638 Hengfeng Road,",
-    //   "上海市靜安區恆豐路638號 蘇河一號1918室",
-    //   "",
-    //   "",
-    //   this.imageUrl));
-    
+  constructor(public stateService:StateService) {
+  }
+  changeLanguages(language:string): void {
+    this.stateService.changeLanguage(language);
+    console.log(this.stateService.language);
+    if(this.stateService.language=='zh'){
+      this.homePageArray=[
+        this.ourTeamTextZH,
+        this.ourTeamTextZH2,
+        this.ourProjectTextZH,
+        this.ourProjectTextZH2,
+        this.ourProjectTextZH3,
+      ]
+    } else if(this.stateService.language=='eg'){
+      this.homePageArray=[
+        this.ourTeamTextEN,
+        this.ourTeamTextEN2,
+        this.ourProjectTextEN,
+        this.ourProjectTextEN2,
+        this.ourProjectTextEN3,
+      ]
+    }
   }
 }
 class contactUsOffice2 {

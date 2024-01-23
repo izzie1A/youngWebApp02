@@ -15,7 +15,8 @@ export class CaroselComponent {
 
   p:any
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) {
+  }
 
   getScrollPosition() {
     const scrollPosition = this.scrollableDiv?.nativeElement.scrollTop;

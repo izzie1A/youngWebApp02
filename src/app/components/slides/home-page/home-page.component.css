@@ -30,7 +30,6 @@
 }
 
 .homepageOurteamHeaderIcon {
-    padding: 5%;
     width: 10vmin;
 }
 
@@ -112,6 +111,7 @@
     flex-direction: row;
     align-items: center;
     height: 10vh;
+    padding: 5%;
 }
 
 .contactsUsItemList{

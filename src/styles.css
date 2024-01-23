@@ -218,3 +218,14 @@ body {
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0.5vh 0px 0px;
 }
 
+.colorOn {
+    /* background-color: rgba(77, 143, 99, 0.9); */
+    background-color: var(--main);
+    color: white;
+}
+
+.colorOff {
+    /* background-color: rgba(77, 143, 99, 0.9); */
+    background-color: var(--sub);
+    color: var(--subText);
+}
