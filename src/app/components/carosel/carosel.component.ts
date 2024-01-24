@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FirebaseControlService } from "src/app/services/firebase-control.service";
 
 @Component({
   selector: 'app-carosel',
@@ -10,13 +11,22 @@ export class CaroselComponent {
   @ViewChild('scrollableDiv')
   scrollableDiv!: ElementRef;
   @ViewChild('scrollableDiv2') scrollableDiv2: ElementRef | undefined;
-  li = [0, 0, 0, 0, 0, 0];
+  li:any[]  = [0, 0, 0, 0, 0, 0];
+  pp:any[]  = [];
   scrollposition:number = 0;
 
   p:any
 
-  constructor(private el: ElementRef) {
+  constructor(private fbs: FirebaseControlService,private el: ElementRef) {
+  this.t();
   }
+
+  async t() {
+    let result = await this.fbs.queryCondition('/yungFolder/ourProject/hkProjectListComplete/', 6, "name", "!=", 'null', 'name');
+    console.warn(result);
+    this.pp = result;
+  }
+
 
   getScrollPosition() {
     const scrollPosition = this.scrollableDiv?.nativeElement.scrollTop;
