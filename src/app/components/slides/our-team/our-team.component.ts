@@ -13,7 +13,7 @@ export class OurTeamComponent {
   // itemCardArrayContainer: any[] = []
   ourTeamList: teamMember[] = [];
 
-  
+
 
   constructor(private fbS: FirebaseControlService) {
     this.getTeamMemberList('yungFolder/ourTeam/chinaTeamMember');
@@ -26,10 +26,16 @@ export class OurTeamComponent {
         this.getTeamMemberList('yungFolder/ourTeam/chinaTeamMember');
         this.ourTeamDisplayImageURL = "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign2.png?alt=media&token=4bc38144-04bf-4066-bc4a-cd037a5ad664"
         break;
-        case "China":
-          this.teamListSelector = input;
-          this.getTeamMemberList('yungFolder/ourTeam/hkMacauTeamMember');
-          this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign.png?alt=media&token=5b3fe704-f6f6-40b6-9de8-5e293c387fe3';
+      case "China":
+        this.teamListSelector = input;
+        this.getTeamMemberList('yungFolder/ourTeam/hkMacauTeamMember');
+        this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign.png?alt=media&token=5b3fe704-f6f6-40b6-9de8-5e293c387fe3';
+        break;
+      case "all":
+        this.teamListSelector = input;
+        this.getTeamMemberList('yungFolder/ourTeam/hkMacauTeamMember');
+        this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0pdf%2FfullTeamOChart.pdf?alt=media&token=fee29bbd-a41d-41bd-b183-6499d5c9a11f';
+        // this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign.png?alt=media&token=5b3fe704-f6f6-40b6-9de8-5e293c387fe3';
         break;
     }
   }

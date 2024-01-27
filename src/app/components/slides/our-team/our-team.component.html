@@ -11,25 +11,27 @@
 </div>
 
 <div>
-    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector=='China'"
+    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector=='HonKongMacau'"
         (click)="selectTeamList('HonKongMacau')">
-        Hong kong & Macau
+        Hong kong & Macaua
     </button>
-    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector!='China'"
+    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector!='HonKongMacau'"
         (click)="selectTeamList('HonKongMacau')">
         Hong kong & Macau
     </button>
 
-    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector!='HonKongMacau'"
+    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector =='China'"
         (click)="selectTeamList('China')">China</button>
-    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector=='HonKongMacau'"
+    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector != 'China'"
         (click)="selectTeamList('China')">China</button>
 
-    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector=='HonKongMacau'"
-        (click)="selectTeamList('China')">all</button>
-    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector!='China'"
-        (click)="selectTeamList('HonKongMacau')">
-        all
+    <button class="buttonAble colorGray itemCardContent" *ngIf="teamListSelector =='all'"
+        (click)="selectTeamList('all')">
+        Full graph
+    </button>
+    <button class="buttonAble colorGreen itemCardContent" *ngIf="teamListSelector !='all'"
+        (click)="selectTeamList('all')">
+        Full graph
     </button>
 </div>
 
