@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StateService } from 'src/app/services/state.service'
+import { FirebaseControlService, firebaseObject} from "src/app/services/firebase-control.service";
 
 @Component({
   selector: 'app-home-page',
@@ -8,8 +9,42 @@ import { StateService } from 'src/app/services/state.service'
 })
 
 export class HomePageComponent {
+  homePageArray: any[] = [];
+  xList: contactUsOffice[] = [];
+  constructor(public stateService: StateService, private fbs: FirebaseControlService) {
+    this.homePageArray = [
+      this.ourTeamTextEN,
+      this.ourTeamTextEN2,
+      this.ourProjectTextEN,
+      this.ourProjectTextEN2,
+      this.ourProjectTextEN3,
+    ];
+    
+    let x:firebaseObject = {name:'asdal',tag:[]};
+    this.fbs.writeUserData('test',x);
+  }
 
-
+  changeLanguages(language: string): void {
+    this.stateService.changeLanguage(language);
+    console.log(this.stateService.language);
+    if (this.stateService.language == 'zh') {
+      this.homePageArray = [
+        this.ourTeamTextZH,
+        this.ourTeamTextZH2,
+        this.ourProjectTextZH,
+        this.ourProjectTextZH2,
+        this.ourProjectTextZH3,
+      ]
+    } else if (this.stateService.language == 'eg') {
+      this.homePageArray = [
+        this.ourTeamTextEN,
+        this.ourTeamTextEN2,
+        this.ourProjectTextEN,
+        this.ourProjectTextEN2,
+        this.ourProjectTextEN3,
+      ]
+    }
+  }
   contactsUsItemList = [
     {
       egName: "Hong Kong Office",
@@ -72,51 +107,13 @@ export class HomePageComponent {
   contactUsTextEN = "";
   imageUrl: string = "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29";
 
-  // homePageArrayBackUp = [
-  //   this.ourTeamTextZH,
-  //   this.ourTeamTextZH2,
+  // homePageArray = [
   //   this.ourTeamTextEN,
   //   this.ourTeamTextEN2,
-  //   this.ourProjectTextZH,
-  //   this.ourProjectTextZH2,
-  //   this.ourProjectTextZH3,
   //   this.ourProjectTextEN,
   //   this.ourProjectTextEN2,
   //   this.ourProjectTextEN3,
-  // ]
-  homePageArray = [
-    this.ourTeamTextEN,
-    this.ourTeamTextEN2,
-    this.ourProjectTextEN,
-    this.ourProjectTextEN2,
-    this.ourProjectTextEN3,
-  ]
-  xList: contactUsOffice[] = [];
-  // x = new ("Beijing Office","北京辦公室",this.imageUrl)
-  constructor(public stateService: StateService) {
-  }
-  
-  changeLanguages(language: string): void {
-    this.stateService.changeLanguage(language);
-    console.log(this.stateService.language);
-    if (this.stateService.language == 'zh') {
-      this.homePageArray = [
-        this.ourTeamTextZH,
-        this.ourTeamTextZH2,
-        this.ourProjectTextZH,
-        this.ourProjectTextZH2,
-        this.ourProjectTextZH3,
-      ]
-    } else if (this.stateService.language == 'eg') {
-      this.homePageArray = [
-        this.ourTeamTextEN,
-        this.ourTeamTextEN2,
-        this.ourProjectTextEN,
-        this.ourProjectTextEN2,
-        this.ourProjectTextEN3,
-      ]
-    }
-  }
+  // ];
 }
 class contactUsOffice2 {
   egName = "undefinded"

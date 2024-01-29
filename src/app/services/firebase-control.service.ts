@@ -112,10 +112,10 @@ export class FirebaseControlService {
   }
 
   // testing
-  async writeUserData(address: string, file: any) {
+  async writeUserData(address: string, file: firebaseObject) {
     // /yungFolder/ourProject/testHK
-    const docRef = await addDoc(collection(this.firestore, address),file);
-
+    console.error(address, file);
+    // const docRef = await addDoc(collection(this.firestore, address),file);
     // await setDoc(doc(this.firestore, "/yungFolder/ourProject/testHK", "LA"), {
     //   name: "Los Angeles",
     //   state: "CA",
@@ -123,4 +123,18 @@ export class FirebaseControlService {
     //   tag: ["USA", "USA2", "USA3"],
     // });
   }
+}
+
+export interface firebaseObject {
+  name: string,
+  tag: string[],
+  content?:any[],
+}
+
+interface f1{
+  ct1:string,
+}
+
+interface f2{
+  ct2:string,
 }
