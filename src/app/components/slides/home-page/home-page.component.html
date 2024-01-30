@@ -49,10 +49,9 @@
     <!-- homepageOurteam -->
     <div class="homepageOurteam">
         <div class="homepageItemHeader">
-            <img class="homepageOurteamHeaderIcon"
+            <!-- <img class="homepageOurteamHeaderIcon"
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage2ourteamIcon.png?alt=media&token=a3a5f319-fec4-493f-9fb6-a59d50ab45e7">
-            <b class="homepageOurteamHeaderTitle">OUR TEAM</b>
-
+            <b class="homepageOurteamHeaderTitle">OUR TEAM</b> -->
         </div>
 
         <div class="homepageOurteamContent">
@@ -75,9 +74,9 @@
     <!-- ourProject -->
     <div class="ourProject ">
         <div class="homepageItemHeader flexCenter">
-            <img class="homepageOurteamHeaderIcon"
+            <!-- <img class="homepageOurteamHeaderIcon"
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage2ourpROJECTIcon.png?alt=media&token=5bfafd99-48cc-47af-b31b-f01960099a5e">
-            <b class="homepageOurteamHeaderTitle">OUR PROJECT</b>
+            <b class="homepageOurteamHeaderTitle">OUR PROJECT</b> -->
         </div>
         <div class="homepageOurteamContent">
             <img class="homepageOurteamimage"
@@ -102,7 +101,7 @@
 
     <!-- ourClient -->
 
-    <div>
+    <!-- <div>
         <div class="ourClient">
             <div class="homepageItemHeader flexCenter itemCardPadding">
                 <img class="homepageOurteamHeaderIcon"
@@ -111,15 +110,15 @@
             </div>
         </div>
         <app-carosel></app-carosel>
-    </div>
+    </div> -->
 
     <!-- contact us -->
     <div class="contactUs ">
         <div class="  " [style]="'background-color: #FFFFFF'">
             <div class=" flexList itemCardMargin ">
-                <a class="homepageOurteamHeaderTitle itemCardTitle">Contact Us</a>
+                <!-- <a class="homepageOurteamHeaderTitle itemCardTitle">Contact Us</a>
                 <img class="homepageOurteamHeaderIcon" [style]="'padding:0;'"
-                    src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
+                    src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181"> -->
             </div>
         </div>
         <div class="contactsUsItemList  itemCardPadding">
@@ -129,7 +128,7 @@
                         {{x.egName}}
                     </b>
                     <div class="contactsUsItemImgFrame flexCenter ">
-                        <img class="contactsUsItemImg" [src]="x.imageURL">
+                        <!-- <img class="contactsUsItemImg" [src]="x.imageURL"> -->
                     </div>
                     <a class="itemCardValue">{{x.englishAddress}}</a>
                     <a class="itemCardValue">{{x.egTelephone}}</a>
@@ -155,7 +154,12 @@
 
 <style>
     .homepageContainerImageOverlay {
-        background-color: var(--main);
+        /* background-color: var(--main); */
+        /* background-color: rgba(0, 84, 4, 0.3); */
+        text-shadow: -1px 1px 0 #000,
+            1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000;
         max-height: 60%;
         min-height: 40%;
         width: 60%;
@@ -163,7 +167,6 @@
         left: 5%;
         position: absolute;
         z-index: 1;
-        background-color: rgba(0, 84, 4, 0.3);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -281,7 +284,7 @@
         min-height: max(20vh, 20ch);
         display: grid;
         grid-template-rows: repeat(4, 1fr);
-        align-items:baseline;
+        align-items: baseline;
         /* justify-items: center; */
         gap: 1fr;
         padding: 2%;
