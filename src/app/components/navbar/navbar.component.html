@@ -15,7 +15,7 @@
 
 <div class="navbarContainer" #navbarDiv>
     <div class="navbarContentItem" *ngFor="let navItem of navbarGidContainer">
-        <a class="hClick itemCardContent" routerLink="/{{navItem.dir}}">{{navItem.displayName}}</a>
+        <a class="hClick itemCardContent" routerLink="/{{navItem.dir}}" (click)="expanNavbar(navbarDiv,NavTriggerArea);navBarClick(hamburgerIconDiv);" >{{navItem.displayName}}</a>
     </div>
 </div>
 

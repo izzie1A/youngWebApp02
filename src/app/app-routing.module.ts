@@ -9,6 +9,7 @@ import { OurClientComponent } from './components/slides/our-client/our-client.co
 import { OurProjectComponent } from './components/slides/our-project/our-project.component';
 import { OurProjectDetailComponent } from './components/slides/our-project-detail/our-project-detail.component';
 import { OurTeamComponent } from './components/slides/our-team/our-team.component';
+import { YungCertGallaryComponent } from "src/app/components/yung-cert-gallary/yung-cert-gallary.component";
 
 import {trigger, animate, style, group, animateChild, query, stagger, transition, state} from '@angular/animations';
 
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'ourTeam', component: OurTeamComponent,data: { animation: 'ourTeam' }, },
   { path: 'ourClient', component: OurClientComponent,data: { animation: 'ourClient' }, },
   { path: 'contactUs', component: ContactUsComponent,data: { animation: 'contactUs' }, },
+  { path: 'yg', component: YungCertGallaryComponent,data: { animation: 'yg' }, },
   { path: 'admin_pannal', component: AdminEditPageComponent,data: { animation: 'admin_pannal' }, },
   // { path: '**', component: HomePageComponent }
 ];
