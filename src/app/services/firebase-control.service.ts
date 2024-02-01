@@ -127,11 +127,16 @@ export class FirebaseControlService {
 
 export interface firebaseObject {
   name: string,
-  tag: string[],
+  content?:any[],
+}
+export interface fireObject {
+  name: string,
+  id: string,
   content?:any[],
 }
 
 interface f1{
+  tag: string[],
   ct1:string,
 }
 

@@ -20,7 +20,7 @@ export class HomePageComponent {
       this.ourProjectTextEN3,
     ];
     
-    let x:firebaseObject = {name:'asdal',tag:[]};
+    let x:firebaseObject = {name:'asdal'};
     this.fbs.writeUserData('test',x);
   }
 
@@ -48,57 +48,74 @@ export class HomePageComponent {
   contactsUsItemList = [
     {
       egName: "Hong Kong Office",
-      zhName: "香港辦公室",
+      zhName: "香港辦事處",
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/hkTransparentMap.png?alt=media&token=ec0eb74e-fae0-4a89-b265-f982df657e7e",
       englishAddress: "18/F Sunshine Plaza	353 Lockhart Road, Wanchai,	Hong Kong",
-      chineseAddress: "上海市靜安區恆豐路638號蘇河一號1918室",
+      chineseAddress: "香港灣仔駱克道353號三湘大廈18樓 ",
       egTelephone: "Tel: (852) 2866 6283 ",
       zhTelephone: "電話: (852) 2866 6283 ",
-      egFax: "Email: company@fujichina.com",
-      zhFax: "Email: company@fujichina.com",
+      egFax: "Fax: (852) 28666732",
+      zhFax: "Fax: (852) 28666732",
+      email:'E-mail: company @fujichina.com',
     },
     {
       egName: "Macau Office",
-      zhName: "澳門辦公室",
+      zhName: "澳門辦事處",
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
-      englishAddress: "Alm. Dr. Carlos'd Assumpcao No. 180 / Tong Nam Ah Central Comercio,10G andar, Macau ",
-      chineseAddress: "澳門宋玉生廣場180號 / 東南亞商業中心",
+      englishAddress: "Alm. Dr. Carlos d' Assumpção No. 180, Tong Nam Ah Central Comercio, 10G andar, Macau ",
+      chineseAddress: "澳門宋玉生廣場180號東南亞商業中心10樓G室 ",
       egTelephone: "Tel: (853) 2875 2730",
       zhTelephone: "電話: (853) 2875 2730",
-      egFax: "Email: company@fujichina.com",
-      zhFax: "Email: company@fujichina.com",
+      egFax: "Fax: (852) 28666732",
+      zhFax: "Fax: (852) 28666732",
+      email:'E-mail: fujichina@macau.ctm.net ',
     },
     {
       egName: "Shanghai Office",
-      zhName: "上海辦公室",
+      zhName: "上海办公室",
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29",
-      englishAddress: "Room 1918, No.638 Hengfeng Road / Suhe No.1, Jing An District, Shanghai, China 200070",
-      chineseAddress: "上海市靜安區恆豐路638號 / 蘇河一號1918室",
+      englishAddress: "Room 1918, no.638 Hengfeng Road, Suhe No.1, JingAn District, Shanghai China",
+      chineseAddress: "上海市静安区恒丰路638号苏河一号 1918 室 ",
       egTelephone: "Tel:(86) 21-5258 5002",
-      zhTelephone: "電話:(86) 21-5258 5002",
-      egFax: "Email: company@fujichina.com",
-      zhFax: "Email: company@fujichina.com",
+      zhTelephone: "电话:(86) 21-5258 5002",
+      egFax: "传真: (852) 28666732",
+      zhFax: "传真: (852) 28666732",
+      email:'',
     },
     {
       egName: "Beijing Office",
       zhName: "北京办公室",
       imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FbejingMap.png?alt=media&token=175db2d6-d263-4741-a18a-dd524cee62fc",
-
       englishAddress: "No.43 Anlelin Road, Dongcheng District,Beijing, China ",
       chineseAddress: "北京市東城區,安樂林路43號",
       egTelephone: "Tel: 010-85115851",
-      zhTelephone: "電話: 010-85115851",
-      egFax: "Email: company@fujichina.com",
-      zhFax: "Email: company@fujichina.com",
+      zhTelephone: "电话: 010-85115851",
+      egFax: "Fax: (852) 28666732",
+      zhFax: "Fax: (852) 28666732",
+      email:'',
     },
   ]
+  spareList:any[] = [
+    {
+      egName: "Shenzhen Office",
+      zhName: "深圳办公室",
+      imageURL: "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FbejingMap.png?alt=media&token=175db2d6-d263-4741-a18a-dd524cee62fc",
+      englishAddress: "Room 2207,22nd Floor, Haiyan Commercial Building, North of Jiabin Road, Luohu District, Shenzhen China ",
+      chineseAddress: "深圳市罗湖区嘉宾路北侧海燕商业大厦22层2207室 ",
+      egTelephone: "Tel: 0755-6116 2681",
+      zhTelephone: "电话: 0755-6116 2681",
+      egFax: "",
+      zhFax: "",
+      email:'',
+    }
+  ]
   contactUsItemListZH = [];
-  ourTeamTextZH = "本公司現有行政及技術職員40多人,以雄厚實力及專業技術滿足各發展商,承辦 商,建築師及設計師等的不同要求。";
-  ourTeamTextZH2 = "如遇有技術要求較高的工程,本公司將因應需求而委派土木工程師,結構工程 師,建築師或電機工程師作技術支援。";
+  ourTeamTextZH = "本公司現有行政及技術職員40多人，以雄厚實力及專業技術滿足各發展商，承辦商，建築師及設計師等的不同要求。";
+  ourTeamTextZH2 = "如遇有技術要求較高的工程，本公司將因應需求而委派土木工程師,結構工程師，建築師或電機工程師作技術支援。";
   ourTeamTextEN = "We have over 40 experienced management and technical staff members at head office both financially and technically, we gain the advantage of fulfilling the diverse requirements of the developer, contractor, architect and designer";
   ourTeamTextEN2 = "Our company would assign civil and structural engineers, architects, electrical and mechanical engineers, and technical staff to participate in our project whenever the situation requires.";
-  ourProjectTextZH = "富士(中國)成立於1984年,其主要業務為承辦室內裝飾工程。";
-  ourProjectTextZH2 = "在過去多年間,本公司已完成了數以百計工程項目,其中包括有酒店,會所,餐 廳,商舖,辦公室及服務式公寓等,成績卓越。工程地點由香港遠至澳門及中國 大陸各省市。";
+  ourProjectTextZH = "富士(中國)成立於1984年，其主要業務為承辦室內裝飾工程。";
+  ourProjectTextZH2 = "在過去多年間，本公司已完成了數以百計工程項目，其中包括有酒店，會所，餐廳，商舖，辦公室及服務式公寓等，成績卓越。工程地點由香港遠至澳門及中國大陸各省市。";
   ourProjectTextZH3 = "富士(中國)獲取ISO 9001品質管理證書,印證了本公司為顧客提供全面優質室內 裝飾工程施工管理的承諾,更標誌著本公司臻至國際認可標準的管理水平。";
   ourProjectTextEN = "Fuji (China) was incorporated in 1984 with its principal business in interior fitting-out and decoration services";
   ourProjectTextEN2 = "In the past years, we have successfully completed hundreds of reputable projects including hotel, cub houses, restaurants, retail outlets, commercial premises and service apartment in Hong Kong, Macau and Mainland China";

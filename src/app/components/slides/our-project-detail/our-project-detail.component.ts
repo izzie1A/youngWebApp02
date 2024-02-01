@@ -48,10 +48,8 @@ export class OurProjectDetailComponent implements OnInit {
     console.warn(result);
     this.fbs.writeUserData('/yungFolder/ourProject/testHK', {
       name: "Los Angeles",
-      // state: "CA",
-      // country: "USA",
-      tag: ["USA", "USA2", "USA3"],
     })
+    // tag: ["USA", "USA2", "USA3"],
     console.log('testWritted')
   }
 

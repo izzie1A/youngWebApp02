@@ -20,39 +20,39 @@
             <span class=" material-symbols-outlined" [style]="'font-size:var(--title)'">
                 language
             </span>
-            <button class=" itemCardTitle colorOn" *ngIf="this.stateService.language != 'zh'"
+            <button class=" itemCardValue colorOn" *ngIf="this.stateService.language != 'zh'"
+                (click)="changeLanguages('zh')">
+                <b>
+                    中文
+                </b>
+            </button>
+            <!-- <button class=" itemCardValue colorOff" *ngIf="this.stateService.language == 'zh'"
                 (click)="changeLanguages('zh')">
                 <b>
                     zh
                 </b>
-            </button>
-            <button class=" itemCardTitle colorOff" *ngIf="this.stateService.language == 'zh'"
-                (click)="changeLanguages('zh')">
+            </button> -->
+            <button class=" itemCardValue colorOn" *ngIf="this.stateService.language != 'eg'"
+                (click)="changeLanguages('eg')">
                 <b>
-                    zh
+                    English
                 </b>
             </button>
-            <button class=" itemCardTitle colorOn" *ngIf="this.stateService.language != 'eg'"
+            <!-- <button class=" itemCardValue colorOff" *ngIf="this.stateService.language == 'eg'"
                 (click)="changeLanguages('eg')">
                 <b>
                     eg
                 </b>
-            </button>
-            <button class=" itemCardTitle colorOff" *ngIf="this.stateService.language == 'eg'"
-                (click)="changeLanguages('eg')">
-                <b>
-                    eg
-                </b>
-            </button>
+            </button> -->
         </div>
     </div>
     <!-- homepageOurteam -->
     <div class="homepageOurteam">
-        <div class="homepageItemHeader">
-            <!-- <img class="homepageOurteamHeaderIcon"
+        <!-- <div class="homepageItemHeader">
+            <img class="homepageOurteamHeaderIcon"
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage2ourteamIcon.png?alt=media&token=a3a5f319-fec4-493f-9fb6-a59d50ab45e7">
-            <b class="homepageOurteamHeaderTitle">OUR TEAM</b> -->
-        </div>
+            <b class="homepageOurteamHeaderTitle">OUR TEAM</b>
+        </div> -->
 
         <div class="homepageOurteamContent">
             <div class="itemCardPadding">
@@ -66,7 +66,7 @@
             </div>
             <div class="itemCardPadding ">
                 <img class="homepageOurteamimage "
-                    src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage2ourteam.png?alt=media&token=206d8a60-994c-4220-8740-cb28bac699c9">
+                    src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FourTeam2.jpg?alt=media&token=911c409e-1fee-4693-8c70-1d624b4ea261">
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="homepageOurteamContent">
             <img class="homepageOurteamimage"
-                src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homepage3ourproject.png?alt=media&token=5143fb61-6243-4e2b-9f5c-04dbbcaecdca">
+                src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2Four%20project.jpg?alt=media&token=5c1c81df-62fe-44ef-9939-602d80b5a577">
             <div class="itemCardPadding">
                 <!-- <a class=" itemCardValue  ">{{ourProjectTextEN}} </a> -->
                 <a class=" itemCardValue  ">{{homePageArray[2]}} </a>
@@ -127,20 +127,14 @@
                     <b class="itemCardContent">
                         {{x.egName}}
                     </b>
-                    <div class="contactsUsItemImgFrame flexCenter ">
-                        <!-- <img class="contactsUsItemImg" [src]="x.imageURL"> -->
-                    </div>
-                    <a class="itemCardValue">{{x.englishAddress}}</a>
-                    <a class="itemCardValue">{{x.egTelephone}}</a>
-                    <a class="itemCardValue">{{x.egFax}}</a>
+                    <p class="itemCardValue">{{x.englishAddress}}</p>
+                    <p class="itemCardValue">{{x.egTelephone}}</p>
+                    <p class="itemCardValue">{{x.egFax}}</p>
                 </div>
                 <div class="flexList item" *ngIf="this.stateService.language == 'zh'">
                     <b class="itemCardContent">
                         {{x.zhName}}
                     </b>
-                    <div class="contactsUsItemImgFrame flexCenter">
-                        <img class="contactsUsItemImg" [src]="x.imageURL">
-                    </div>
                     <a class="itemCardValue">{{x.chineseAddress}}</a>
                     <a class="itemCardValue">{{x.zhTelephone}}</a>
                     <a class="itemCardValue">{{x.zhFax}}</a>
@@ -281,12 +275,11 @@
     }
 
     .contactsUsItemList .item {
-        min-height: max(20vh, 20ch);
+        /* min-height: max(20vh, 20ch); */
+        height: 100%;
         display: grid;
         grid-template-rows: repeat(4, 1fr);
         align-items: baseline;
-        /* justify-items: center; */
-        gap: 1fr;
         padding: 2%;
     }
 
@@ -298,7 +291,6 @@
 
     .contactsUsItemImg {
         max-width: 100%;
-        /* max-height: 100%; */
         height: 100%;
     }
 
