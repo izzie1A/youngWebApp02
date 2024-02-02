@@ -78,7 +78,7 @@ export class HomePageComponent {
       chineseAddress: "上海市静安区恒丰路638号苏河一号 1918 室 ",
       egTelephone: "Tel:(86) 21-5258 5002",
       zhTelephone: "电话:(86) 21-5258 5002",
-      egFax: "传真: (852) 28666732",
+      egFax: "Fax: (852) 28666732",
       zhFax: "传真: (852) 28666732",
       email:'',
     },
@@ -91,11 +91,9 @@ export class HomePageComponent {
       egTelephone: "Tel: 010-85115851",
       zhTelephone: "电话: 010-85115851",
       egFax: "Fax: (852) 28666732",
-      zhFax: "Fax: (852) 28666732",
+      zhFax: "传真: (852) 28666732",
       email:'',
     },
-  ]
-  spareList:any[] = [
     {
       egName: "Shenzhen Office",
       zhName: "深圳办公室",
@@ -108,6 +106,8 @@ export class HomePageComponent {
       zhFax: "",
       email:'',
     }
+  ]
+  spareList:any[] = [
   ]
   contactUsItemListZH = [];
   ourTeamTextZH = "本公司現有行政及技術職員40多人，以雄厚實力及專業技術滿足各發展商，承辦商，建築師及設計師等的不同要求。";

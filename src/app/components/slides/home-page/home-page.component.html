@@ -13,7 +13,8 @@
             </div>
         </div>
         <img class="homepageContainerImage"
-            src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage1.png?alt=media&token=197004a9-edb1-42b5-a57c-8a16b50e98d4">
+            src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2F0676E562-6134-4153-8779-98AD1BD0C57F.jpeg?alt=media&token=fe7f248a-5052-42dd-a4f2-bf4e755ee102">
+            <!-- src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage1.png?alt=media&token=197004a9-edb1-42b5-a57c-8a16b50e98d4"> -->
     </div>
     <div class="">
         <div class="itemCardMargin flexCenter " [style]="'justify-content: flex-start;'">
@@ -33,7 +34,7 @@
                 </b>
             </button> -->
             <button class=" itemCardValue colorOn" *ngIf="this.stateService.language != 'eg'"
-                (click)="changeLanguages('eg')">
+                (click)="changeLanguages( 'eg')">
                 <b>
                     English
                 </b>
@@ -156,7 +157,8 @@
             -1px -1px 0 #000;
         max-height: 60%;
         min-height: 40%;
-        width: 60%;
+        min-width: 60%;
+        max-width: 80%;
         bottom: 10%;
         left: 5%;
         position: absolute;
@@ -270,7 +272,8 @@
     .contactsUsItemList {
         position: relative;
         display: grid;
-        grid-template-columns: 20% 20% 20% 20%;
+        /* grid-template-columns: 20% 20% 20% 20%; */
+        grid-template-columns: repeat(5,1fr );
         justify-content: space-evenly;
     }
 
