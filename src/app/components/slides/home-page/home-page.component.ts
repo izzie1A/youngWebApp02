@@ -19,7 +19,6 @@ export class HomePageComponent {
       this.ourProjectTextEN2,
       this.ourProjectTextEN3,
     ];
-    
     let x:firebaseObject = {name:'asdal'};
     this.fbs.writeUserData('test',x);
   }
@@ -56,7 +55,7 @@ export class HomePageComponent {
       zhTelephone: "電話: (852) 2866 6283 ",
       egFax: "Fax: (852) 28666732",
       zhFax: "Fax: (852) 28666732",
-      email:'E-mail: company @fujichina.com',
+      email:'company@fujichina.com',
     },
     {
       egName: "Macau Office",
@@ -68,7 +67,7 @@ export class HomePageComponent {
       zhTelephone: "電話: (853) 2875 2730",
       egFax: "Fax: (852) 28666732",
       zhFax: "Fax: (852) 28666732",
-      email:'E-mail: fujichina@macau.ctm.net ',
+      email:'fujichina@macau.ctm.net ',
     },
     {
       egName: "Shanghai Office",
@@ -80,7 +79,7 @@ export class HomePageComponent {
       zhTelephone: "电话:(86) 21-5258 5002",
       egFax: "Fax: (852) 28666732",
       zhFax: "传真: (852) 28666732",
-      email:'',
+      email:'aaaaa',
     },
     {
       egName: "Beijing Office",
@@ -92,7 +91,7 @@ export class HomePageComponent {
       zhTelephone: "电话: 010-85115851",
       egFax: "Fax: (852) 28666732",
       zhFax: "传真: (852) 28666732",
-      email:'',
+      email:'aaaaa',
     },
     {
       egName: "Shenzhen Office",
@@ -104,10 +103,8 @@ export class HomePageComponent {
       zhTelephone: "电话: 0755-6116 2681",
       egFax: "",
       zhFax: "",
-      email:'',
+      email:'aaaaa',
     }
-  ]
-  spareList:any[] = [
   ]
   contactUsItemListZH = [];
   ourTeamTextZH = "本公司現有行政及技術職員40多人，以雄厚實力及專業技術滿足各發展商，承辦商，建築師及設計師等的不同要求。";
@@ -123,14 +120,6 @@ export class HomePageComponent {
   contactUsTextZH = "";
   contactUsTextEN = "";
   imageUrl: string = "https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/macauVector.png?alt=media&token=e37a0d9d-c6c8-4738-837a-d392d351ea29";
-
-  // homePageArray = [
-  //   this.ourTeamTextEN,
-  //   this.ourTeamTextEN2,
-  //   this.ourProjectTextEN,
-  //   this.ourProjectTextEN2,
-  //   this.ourProjectTextEN3,
-  // ];
 }
 class contactUsOffice2 {
   egName = "undefinded"
@@ -140,7 +129,7 @@ class contactUsOffice2 {
     this.zhName = zhName;
   }
 }
-
+ 
 export class contactUsOffice {
   egName: string;
   zhName: string;
@@ -149,12 +138,10 @@ export class contactUsOffice {
   telephone: string;
   fax: string;
   imageUrl: string;
-
   constructor(
     egName: string,
     zhName: string,
     egAddress: string,
-
     zhAddress: string,
     telephone: string,
     fax: string,
