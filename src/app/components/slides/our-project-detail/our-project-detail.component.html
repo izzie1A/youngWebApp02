@@ -23,18 +23,22 @@
     {{resultText}}
     <div class="flexAround  itemCardPadding">
         <button *ngFor="let x of detailMenu" class="hClick" (click)="detailMenuSelect(x)">
-                <b class=" itemCardMargin  ">{{x}}</b>
+            <b class=" itemCardMargin  ">{{x}}</b>
         </button>
     </div>
 
     <div class="ourProjectDetailItemList">
         <div class="ourProjectDetailItem" *ngFor="let x of firebaseCollection|async">
             <!-- <img (click)="viewImage(image.src)" class="ourProjectDetailImage" [src]="x.imageArray[0]" #image> -->
-            <div class="ourProjectDetailImageFrame">
-                <!-- <img loading="lazy" (click)="viewImageList(x.imageArray)" class="ourProjectDetailImage"
-                    [src]="x.imageArray[0]"> -->
+            <!-- <div class="ourProjectDetailImageFrame">
+                <img loading="lazy" (click)="viewImageList(x.imageArray)" class="ourProjectDetailImage"
+                    [src]="x.imageArray[0]">
+            </div> -->
+            <div class="ourProjectDetailItemTitle">
+                <b>
+                    {{x.name}}
+                </b>
             </div>
-            <div class="ourProjectDetailItemTitle">{{x.name}}</div>
         </div>
     </div>
 </div>
