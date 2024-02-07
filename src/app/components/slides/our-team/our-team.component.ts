@@ -8,7 +8,7 @@ import { FirebaseControlService } from "src/app/services/firebase-control.servic
   styleUrls: ['./our-team.component.css']
 })
 export class OurTeamComponent {
-  teamListSelector: any = 'HonKongMacau';
+  teamListSelector: any = 'all';
   ourTeamDisplayImageURL: string = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign2.png?alt=media&token=4bc38144-04bf-4066-bc4a-cd037a5ad664';
   // itemCardArrayContainer: any[] = []
   ourTeamList: teamMember[] = [];
@@ -33,8 +33,8 @@ export class OurTeamComponent {
         break;
       case "all":
         this.teamListSelector = input;
-        this.getTeamMemberList('yungFolder/ourTeam/hkMacauTeamMember');
-        this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0pdf%2FfullTeamOChart.pdf?alt=media&token=fee29bbd-a41d-41bd-b183-6499d5c9a11f';
+        this.getTeamMemberList('yungFolder/ourTeam/all');
+        this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FfullTeamOChart-1.png?alt=media&token=eba5e4f4-45e1-457d-870e-ed58294705ef';
         // this.ourTeamDisplayImageURL = 'https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FoutTeamDesign.png?alt=media&token=5b3fe704-f6f6-40b6-9de8-5e293c387fe3';
         break;
     }
