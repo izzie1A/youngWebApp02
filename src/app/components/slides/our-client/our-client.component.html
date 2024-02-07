@@ -19,7 +19,7 @@
 
     <div class="ourClientArticels">
         <div *ngFor="let item of pageItemArray[pageCounter]; index as i" class="" #{{i}} class="">
-            <div class="ourClientArticelsItem" *ngIf="i%2 == 0&&item!=null;" >
+            <!-- <div class="ourClientArticelsItem" *ngIf="i%2 == 0&&item!=null;" >
                 <div [style]="'width:100%'">
                     <div class="ourClientArticelsItemTitle itemCardContent"> {{item.data.name}}</div>
                     <div class="ourClientArticelsItemDescription itemCardValue"> {{item.data.description}}</div>
@@ -31,18 +31,18 @@
                             src="{{item.data.image}}" #imageIconRef1>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- middle variation -->
-            <div class="ourClientArticelsItem" *ngIf="i%2!=0 && item!=null;">
+            <div class="ourClientArticelsItem" >
+                <div [style]="'width:100%'">
+                    <div class="ourClientArticelsItemTitle itemCardContent"> {{item.data.name}}</div>
+                    <div class="ourClientArticelsItemDescription itemCardValue"> {{item.data.description}}</div>
+                </div>
                 <div class="ourClientArticelsItemImageFrame" >
                     <a href="{{item.data.file}}" download>
                         <img class="ourClientArticelsItemImage" src="{{item.data.image}}" #imageRef2>
                     </a>
-                </div>
-                <div [style]="'width:100%'">
-                    <div class="ourClientArticelsItemTitle itemCardContent"> {{item.data.name}}</div>
-                    <div class="ourClientArticelsItemDescription itemCardValue"> {{item.data.description}}</div>
                 </div>
             </div>
         </div>

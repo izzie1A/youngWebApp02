@@ -1,5 +1,4 @@
 /* header */
-/* header */
 .ourProjectHeader {
     color: green;
     font-size: larger;
@@ -16,12 +15,13 @@
   .ourProjectHeaderTitle {
     color: green;
     font-family: Cocogoose;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 91px;
+    /* font-size: 64px; */
+    font-size: var(--title);
+    /* font-weight: 400; */
+    /* line-height: 91px; */
   
     display: flex;
-    align-items: center;
+    align-items:end;
   }
   
   /* item */

@@ -1,20 +1,20 @@
 <div class="ourProjectHeader flexAround">
     <img class=" ourProjectHeaderIcon"
         src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
-    <div class="ourProjectHeaderTitle">
+    <div class="ourProjectHeaderTitle itemCardValue">
         {{headerTitle}}
     </div>
 </div>
 
 <div class="">
+    <button class="buttonAble colorGray" *ngIf="ourProjectHolderState=='Current'"
+        (click)="selectTeamList('Completed')">Completed Project</button>
+    <button class="buttonAble colorGreen" *ngIf="ourProjectHolderState!='Current'"
+        (click)="selectTeamList('Completed')">Completed Project</button>
     <button class="buttonAble colorGray" *ngIf="ourProjectHolderState=='Completed'"
         (click)="selectTeamList('Current')">Current Project</button>
     <button class="buttonAble colorGreen" *ngIf="ourProjectHolderState!='Completed'"
         (click)="selectTeamList('Current')">Current Project</button>
-    <button class="buttonAble colorGreen" *ngIf="ourProjectHolderState!='Current'"
-        (click)="selectTeamList('Completed')">Completed Project</button>
-    <button class="buttonAble colorGray" *ngIf="ourProjectHolderState=='Current'"
-        (click)="selectTeamList('Completed')">Completed Project</button>
 </div>
 
 <div class="itemCardPadding">

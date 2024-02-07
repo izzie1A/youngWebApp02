@@ -1,7 +1,9 @@
 <div class="homepageContainer ">
     <div class="homepageContainerImageFrame itemCardPadding">
+        <!-- <img class="homepageContainerImageOverlay" src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FhomepageTitleImg.png?alt=media&token=3a4a4fbb-5e37-4d87-b603-3ccbdd55928e"> -->
         <div class="homepageContainerImageOverlay itemCardPadding">
-            <div class="x">
+            <img src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
+            <div class="x flexList">
                 <a class="  homepageContainerImageOverlayTitleText1 ">FUJI(CHINA)</a>
                 <a class="  homepageContainerImageOverlayTitleText2 ">
                     DECORATION & ENGINEERING CO LTD
@@ -12,9 +14,9 @@
             </div>
         </div>
         <img class="homepageContainerImage"
-            src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2F0676E562-6134-4153-8779-98AD1BD0C57F.jpeg?alt=media&token=fe7f248a-5052-42dd-a4f2-bf4e755ee102">
+            src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FPHOTO-2024-02-03-10-59-39.png?alt=media&token=fdd8be7b-1192-4a11-8561-c7102312240f">
     </div>
-    <div class="">
+    <!-- <div class="">
         <div class="itemCardMargin flexCenter " [style]="'justify-content: flex-start;'">
             <span class=" material-symbols-outlined" [style]="'font-size:var(--title)'">
                 language
@@ -32,7 +34,7 @@
                 </b>
             </button>
         </div>
-    </div>
+    </div> -->
     <!-- homepageOurteam -->
     <div class="homepageOurteam">
         <div class="homepageOurteamContent">
@@ -79,18 +81,18 @@
         </div>
         <div class="contactsUsItemList  itemCardPadding">
             <div *ngFor="let x of contactsUsItemList">
-                <div class="flexList item">
+                <div class="flexList item itemCardMargin">
                     <b class="itemCardContent" *ngIf="this.stateService.language == 'eg'">
                         {{x.egName}}
                     </b>
                     <b class="itemCardContent" *ngIf="this.stateService.language == 'zh'">
                         {{x.zhName}}
                     </b>
-                    <p class="itemCardValue">{{x.chineseAddress}} </p>
-                    <p class="itemCardValue">{{x.englishAddress}} </p>
+                    <a class="itemCardValue">{{x.englishAddress}} </a>
+                    <a class="itemCardValue">{{x.chineseAddress}} </a>
                     <a class="itemCardValue">{{x.zhTelephone}}</a>
-                    <a class="itemCardValue">{{x.egTelephone}}</a>
-                    <a class="itemCardValue">{{x.email}}</a>
+                    <a class="itemCardValue">Email: {{x.email}}</a>
+                    <a class="itemCardValue"> Tel: {{x.egTelephone}}</a>
                 </div>
             </div>
         </div>
@@ -98,187 +100,5 @@
 </div>
 
 <style>
-    .homepageContainerImageOverlay {
-        /* background-color: rgba(0, 84, 4, 0.3); */
-        text-shadow: -1px 1px 0 #000,
-            1px 1px 0 #000,
-            1px -1px 0 #000,
-            -1px -1px 0 #000;
-        max-height: 60%;
-        min-height: 40%;
-        min-width: 60%;
-        max-width: 80%;
-        bottom: 10%;
-        left: 5%;
-        position: absolute;
-        z-index: 1;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
 
-    .homepageContainer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .homepageContainerImage {
-        width: 100%;
-    }
-
-    .homepageOurteamContent {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        align-items: center;
-    }
-
-    .homepageOurteamHeaderIcon {
-        width: 10vmin;
-    }
-
-    .homepageOurteamHeaderTitle {
-        color: #4d8f63;
-        font-size: x-large;
-    }
-
-    .homepageOurteamimage {
-        width: 100%;
-    }
-
-    .homepageContainerImageFrame {
-        position: relative;
-    }
-
-    .homepageItemHeader {}
-
-    .homepageContainerImageOverlayTitle {
-        opacity: 1;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        position: relative;
-    }
-
-    .x {
-        height: 100%;
-        display: grid;
-        grid-template-rows: 30% 20% 50%;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .homepageContainerImageOverlayTitleText1 {
-        font-weight: 400;
-        font-size: var(--title);
-        margin: 1%;
-        color: white;
-    }
-
-    .homepageContainerImageOverlayTitleText2 {
-        font-weight: 400;
-        font-size: var(--keyValue);
-        color: white;
-    }
-
-    .homepageContainerImageOverlayTitleText3 {
-        font-weight: 400;
-        font-size: var(--context);
-        color: white;
-    }
-
-
-
-    .ourClientContent {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-    }
-
-    .ourClientImgFrame {
-        width: 100%;
-        position: relative;
-        display: flex;
-        justify-items: center;
-        align-items: center;
-    }
-
-    .ourClientImg {
-        max-width: 100%;
-    }
-
-    .homepageItemHeader {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 10vh;
-        padding: 2%;
-    }
-
-    .contactsUsItemList {
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        justify-content: space-evenly;
-    }
-
-    .contactsUsItemList .item {
-        height: 100%;
-        display: grid;
-        grid-template-rows: repeat(4, 1fr);
-        align-items: baseline;
-        padding: 2%;
-    }
-
-    .contactsUsItemImgFrame {
-        position: relative;
-        height: 10vmin;
-
-    }
-
-    .contactsUsItemImg {
-        max-width: 100%;
-        height: 100%;
-    }
-
-
-    .ourClientFooter {
-        height: 4ch;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #ededed;
-    }
-
-    .ourClientFooterDot {
-        width: 1ch;
-        height: 1ch;
-        margin: 0.5ch;
-        border-radius: 1000px;
-        background-color: var(--main);
-    }
-
-    .ourClientFooterDotOff {
-        width: 1ch;
-        height: 1ch;
-        margin: 0.5ch;
-        border-radius: 1000px;
-        background-color: var(--sub);
-    }
-
-    .ourClient {
-        background-color: #e7e6e6;
-    }
-
-    .ourClientContent {
-        background-color: var(--white);
-        border-radius: 2.5vmin;
-    }
-
-    .contactsUsItemText {
-        color: var(--main);
-        font-size: 1ch;
-    }
 </style>

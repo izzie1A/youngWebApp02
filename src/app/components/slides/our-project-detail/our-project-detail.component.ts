@@ -26,6 +26,9 @@ export class OurProjectDetailComponent implements OnInit {
   location: string = '';
 
   detailMenu = ['Department Store', 'Hotel', 'Restaurant', 'Theme Park']
+  detailMenuHK = ["Residential","Commercial","Hotel","Theme Park","Retail"]
+  detailMenuMC = ['Casino', 'Hotel', 'Restaurant', 'Retail']
+  detailMenuCH = ['Residentia', 'Hotel', 'Retail']
   detailMenuSelector = ''
 
   constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, private router: Router) {
@@ -113,6 +116,7 @@ export class OurProjectDetailComponent implements OnInit {
         break;
       };
     }
+    
     let result = this.projectState + ' projects in ' + this.location;
     this.resultText = result;
 
