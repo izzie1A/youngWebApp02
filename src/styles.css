@@ -36,9 +36,9 @@ body {
     --screenM: 1200px;
     --screenL: 2000px;
 
-    --imgS: 12px;
-    --imgM: 120px;
-    --imgL: 240px;
+    --imgS: 35px;
+    --imgM: 48px;
+    --imgL: 96px;
 
     --boxShadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     --boxShadow2: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
@@ -47,9 +47,9 @@ body {
 
 @media only screen and (min-width: 700px) {
     :root {
-        --imgS: 12px;
-        --imgM: 120px;
-        --imgL: 240px;
+        --imgS: 48px;
+        --imgM: 96px;
+        --imgL: 192px;
 
         --title: 4ch;
         --content: 3ch;
@@ -70,9 +70,9 @@ body {
 
 @media only screen and (min-width: 1500px) {
     :root {
-        --imgS: 12px;
-        --imgM: 120px;
-        --imgL: 240px;
+        --imgS: 48px;
+        --imgM: 192px;
+        --imgL: 384px;
         --title: 5ch;
         --content: 4ch;
         --keyValue: 3ch;
@@ -228,4 +228,82 @@ body {
     /* background-color: rgba(77, 143, 99, 0.9); */
     background-color: var(--sub);
     color: var(--subText);
+}
+
+
+
+
+
+?
+.ourLayContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.ourLayDiv {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    display: flex;
+    align-items: end;
+}
+.ourLayImg {
+    width: 100%;
+    height: 100%;
+}
+.ourLayIcon {
+    width: var(--imgL);
+    margin: 2%;
+}
+.ourLayTitle {
+    color: var(--main);
+    -webkit-text-stroke: 3px #FFFFFF;
+    font-weight: 400;
+    font-size: var(--imgM);
+    font-weight: bold;
+    text-align: center;
+    margin: 2%;
+}
+
+
+
+
+/* cunstom yung */
+
+.ourLayContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.ourLayDiv {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    display: flex;
+    align-items: end;
+}
+.ourLayImg {
+    width: 100%;
+    height: 100%;
+}
+.ourLayIcon {
+    width: var(--imgL);
+    margin: 2%;
+}
+.ourLayTitle {
+    color: var(--main);
+    -webkit-text-stroke: 3px #FFFFFF;
+    font-weight: 400;
+    font-size: var(--imgS);
+    font-weight: bold;
+    text-align: center;
+    margin: 2%;
 }

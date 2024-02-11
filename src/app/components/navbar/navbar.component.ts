@@ -27,6 +27,7 @@ export class NavbarComponent {
       { dir: 'ourTeam', iconName: 'engineering', displayName: 'Our Team' },
       { dir: 'ourProject', iconName: 'receipt_long', displayName: 'Our Project' },
       { dir: 'ourClient', iconName: 'groups', displayName: 'Our Client' },
+      { dir: 'certificate', iconName: 'groups', displayName: 'Certificate' },
       // { dir: 'contactUs', iconName: 'contact_support', displayName: 'Contact Us' },
       // { dir: 'admin_pannal', iconName: 'admin_pannal', displayName: '(tem)Admin Pannal' },
     ];

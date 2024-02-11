@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'ourTeam', component: OurTeamComponent,data: { animation: 'ourTeam' }, },
   { path: 'ourClient', component: OurClientComponent,data: { animation: 'ourClient' }, },
   { path: 'contactUs', component: ContactUsComponent,data: { animation: 'contactUs' }, },
-  { path: 'yg', component: YungCertGallaryComponent,data: { animation: 'yg' }, },
+  { path: 'certificate', component: YungCertGallaryComponent,data: { animation: 'yg' }, },
   { path: 'admin_pannal', component: AdminEditPageComponent,data: { animation: 'admin_pannal' }, },
   // { path: '**', component: HomePageComponent }
 ];
