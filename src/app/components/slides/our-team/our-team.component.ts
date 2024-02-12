@@ -16,7 +16,8 @@ export class OurTeamComponent {
 
 
   constructor(private fbS: FirebaseControlService) {
-    this.getTeamMemberList('yungFolder/ourTeam/chinaTeamMember');
+    this.selectTeamList('all')
+    // this.getTeamMemberList('yungFolder/ourTeam/chinaTeamMember');
   }
 
   selectTeamList(input: string) {

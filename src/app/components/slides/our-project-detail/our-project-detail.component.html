@@ -15,22 +15,12 @@
             </a>
         </div>
     </div>
-    <!-- <div class="x">
-        <img class="ourProjectDetailHeaderImage" loading="lazy"
-            src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/completedProjectInMainlandChina.png?alt=media&token=14fc0ad6-ceb4-4e24-8d96-3c987d77f1a5">
-        <div class="ourProjectDetailOverlayImgFrame">
-        </div>
-        <div class="ourProjectDetailOverlay">
-            <img class=" ourProjectDetailIcon" loading="lazy"
-                src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
-            <b class="ourProjectDetailTitle itemCardTitle">{{resultText}}</b>
-        </div>
-    </div> -->
     {{detailMenuSelector}}
+    <br>
     {{resultText}}
-    <div class="flexAround  itemCardPadding">
-        <button *ngFor="let x of detailMenu" class="hClick" (click)="detailMenuSelect(x)">
-            <b class=" itemCardMargin  ">{{x}}</b>
+    <div class=" detailCatBtnList ">
+        <button class=" detailCatBtn itemButton" *ngFor="let x of detailMenu" (click)="detailMenuSelect(x)">
+            <b class="itemCardContent">{{x}}</b>
         </button>
     </div>
 
@@ -41,7 +31,7 @@
                 <img loading="lazy" (click)="viewImageList(x.imageArray)" class="ourProjectDetailImage"
                     [src]="x.imageArray[0]">
             </div> -->
-            <div class="ourProjectDetailItemTitle">
+            <div (click)="viewImageList(x.imageArray)" class="ourProjectDetailItemTitle itemButton ">
                 <b>
                     {{x.name}}
                 </b>
