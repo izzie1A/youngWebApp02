@@ -126,6 +126,7 @@
     /* position: relative; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 50% 50%;
     /* justify-content: space-evenly; */
 }
 
@@ -135,6 +136,14 @@
     grid-template-rows: repeat(4, 1fr);
     padding: 2%;
     /* align-items: baseline; */
+    height:50vh;
+    /* background-color: blue; */
+}
+.contactsUsItemList .itemValue {
+    height:10vh;
+    /* background-color: red;+
+    
+    */
 }
 
 .contactsUsItemImg {

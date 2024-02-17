@@ -78,17 +78,15 @@
     <!-- contact us -->
     <div class="contactUs ">
         <div class="contactsUsItemList  itemCardPadding" [style]="'align-items: first baseline;'">
-            <div *ngFor="let x of contactsUsItemList">
-                <div class="item itemCardMargin">
-                    <b class="itemCardContent" >
-                        {{x.egName}}
-                    </b>
-                    <a class="itemCardValue"> {{x.englishAddress}} </a>
-                    <a class="itemCardValue"> {{x.chineseAddress}} </a>
-                    <a class="itemCardValue"> {{x.zhTelephone}} </a>
-                    <a class="itemCardValue"> {{x.email}} </a>
-                    <!-- <a class="itemCardValue"> {{x.egTelephone}}</a> -->
-                </div>
+            <div class="item itemCardMargin" *ngFor="let x of contactsUsItemList">
+                <b class="itemCardContent itemValue">
+                    {{x.egName}}
+                </b>
+                <a class="itemCardValue itemValue "> {{x.englishAddress}} </a>
+                <a class="itemCardValue itemValue "> {{x.chineseAddress}} </a>
+                <a class="itemCardValue itemValue "> {{x.zhTelephone}} </a>
+                <a class="itemCardValue itemValue "> {{x.email}} </a>
+                <!-- <a class="itemCardValue"> {{x.egTelephone}}</a> -->
             </div>
         </div>
     </div>
