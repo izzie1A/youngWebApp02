@@ -9,11 +9,13 @@
         </a>
     </div>
 </div>
-
+<div class="yungCertGallaryContainer" >
+    <div *ngFor="let x of pageItemArray" class="yungCertGallaryImageFrame" >
+        <img  class="yungCertGallaryImage" src="{{x}}">
+    </div>
+</div>
+<!-- 
 <div class="yungCertGallaryContainer2 itemCardPadding ">
-    <!-- <b class="itemCardContent">
-        Certificate
-    </b> -->
     <div class="yungCertGallaryContainer">
         <div class="yungCertGallaryImageFrame">
             <button class=" yungCertGallaryButton" (click)="switchPage(-1)">
@@ -22,9 +24,6 @@
                 </span>
             </button>
             <img *ngIf="pageItemArray[pageindex].data !== null " class="yungCertGallaryImage" src="{{pageItemArray[pageindex]}}">
-            <!-- <img *ngIf="pageItemArray[pageindex].data !== null " class="yungCertGallaryImage" src="{{pageItemArray[pageindex].data.image}}"> -->
-            <!-- src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/homePage1.png?alt=media&token=197004a9-edb1-42b5-a57c-8a16b50e98d4"> -->
-
             <button class=" yungCertGallaryButton" (click)="switchPage(1)">
                 <span class="material-symbols-outlined">
                     arrow_forward_ios
@@ -32,4 +31,4 @@
             </button>
         </div>
     </div>
-</div>
+</div> -->

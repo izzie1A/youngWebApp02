@@ -16,6 +16,7 @@ body {
     --lightBlue: #8da9c4;
     --lightGray: #cccccc;
     --dark: #4d4d4d;
+    --gray: #9DABC2;
 
     --seaSick: #e9e8e2;
     --sickSea: var(--dark);
@@ -47,13 +48,13 @@ body {
 
 @media only screen and (min-width: 700px) {
     :root {
-        --imgS: 48px;
+        /* --imgS: 48px;
         --imgM: 96px;
         --imgL: 192px;
 
         --title: 4ch;
         --content: 3ch;
-        --keyValue: 2ch;
+        --keyValue: 2ch; */
     }
     .itemImageFrame {
         height: 60px;
@@ -70,12 +71,12 @@ body {
 
 @media only screen and (min-width: 1500px) {
     :root {
-        --imgS: 48px;
+        /* --imgS: 48px;
         --imgM: 192px;
         --imgL: 384px;
         --title: 5ch;
         --content: 4ch;
-        --keyValue: 3ch;
+        --keyValue: 3ch; */
     }
 /* 
     .itemCardTitle {
@@ -88,7 +89,8 @@ body {
 
     .itemCardValue {
         font-size: 4ch;
-    } */
+    } 
+*/
 
     .itemImageFrame {
         height: 100px;

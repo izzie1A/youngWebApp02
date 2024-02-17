@@ -1,6 +1,7 @@
 <div class="homepageContainer ">
     <div class="homepageContainerImageFrame itemCardPadding">
-        <img class="homepageContainerImageOverlay" src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FhomepageTitleImg.png?alt=media&token=3a4a4fbb-5e37-4d87-b603-3ccbdd55928e">
+        <img class="homepageContainerImageOverlay"
+            src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FhomepageTitleImg.png?alt=media&token=3a4a4fbb-5e37-4d87-b603-3ccbdd55928e">
         <!-- <div class="homepageContainerImageOverlay itemCardPadding">
             <img src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
             <div class="x flexList">
@@ -73,32 +74,23 @@
         <div class="ourProjectImage"></div>
         <div class="ourProjectText"></div>
     </div>
+
     <!-- contact us -->
     <div class="contactUs ">
-        <div class="  " [style]="'background-color: #FFFFFF'">
-            <div class=" flexList itemCardMargin ">
-            </div>
-        </div>
-        <div class="contactsUsItemList  itemCardPadding">
+        <div class="contactsUsItemList  itemCardPadding" [style]="'align-items: first baseline;'">
             <div *ngFor="let x of contactsUsItemList">
-                <div class="flexList item itemCardMargin">
-                    <b class="itemCardContent" *ngIf="this.stateService.language == 'eg'">
+                <div class="item itemCardMargin">
+                    <b class="itemCardContent" >
                         {{x.egName}}
                     </b>
-                    <b class="itemCardContent" *ngIf="this.stateService.language == 'zh'">
-                        {{x.zhName}}
-                    </b>
-                    <a class="itemCardValue">{{x.englishAddress}} </a>
-                    <a class="itemCardValue">{{x.chineseAddress}} </a>
-                    <a class="itemCardValue">{{x.zhTelephone}}</a>
-                    <a class="itemCardValue"> {{x.email}}</a>
+                    <a class="itemCardValue"> {{x.englishAddress}} </a>
+                    <a class="itemCardValue"> {{x.chineseAddress}} </a>
+                    <a class="itemCardValue"> {{x.zhTelephone}} </a>
+                    <a class="itemCardValue"> {{x.email}} </a>
                     <!-- <a class="itemCardValue"> {{x.egTelephone}}</a> -->
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-
-<style>
-
-</style>

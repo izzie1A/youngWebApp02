@@ -123,24 +123,18 @@
 }
 
 .contactsUsItemList {
-    position: relative;
+    /* position: relative; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 }
 
 .contactsUsItemList .item {
-    height: 100%;
-    /* display: grid;
+    /* height: 100%; */
+    display: grid;
     grid-template-rows: repeat(4, 1fr);
-    padding: 2%; */
-    align-items: baseline;
-}
-
-.contactsUsItemImgFrame {
-    position: relative;
-    height: 10vmin;
-
+    padding: 2%;
+    /* align-items: baseline; */
 }
 
 .contactsUsItemImg {
