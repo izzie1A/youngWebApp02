@@ -1,5 +1,5 @@
-<div class="homepageContainer ">
-    <div class="homepageContainerImageFrame itemCardPadding">
+<div class="homepageContainer flexList ">
+    <div class="homepageContainerImageFrame itemCardPadding ">
         <img class="homepageContainerImageOverlay"
             src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FhomepageTitleImg.png?alt=media&token=3a4a4fbb-5e37-4d87-b603-3ccbdd55928e">
         <!-- <div class="homepageContainerImageOverlay itemCardPadding">
@@ -17,27 +17,8 @@
         <img class="homepageContainerImage"
             src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FPHOTO-2024-02-03-10-59-39.png?alt=media&token=fdd8be7b-1192-4a11-8561-c7102312240f">
     </div>
-    <!-- <div class="">
-        <div class="itemCardMargin flexCenter " [style]="'justify-content: flex-start;'">
-            <span class=" material-symbols-outlined" [style]="'font-size:var(--title)'">
-                language
-            </span>
-            <button class=" itemCardValue colorOn" *ngIf="this.stateService.language != 'zh'"
-                (click)="changeLanguages('zh')">
-                <b>
-                    中文
-                </b>
-            </button>
-            <button class=" itemCardValue colorOn" *ngIf="this.stateService.language != 'eg'"
-                (click)="changeLanguages( 'eg')">
-                <b>
-                    English
-                </b>
-            </button>
-        </div>
-    </div> -->
     <!-- homepageOurteam -->
-    <div class="homepageOurteam">
+    <div class="homepageOurteam  ">
         <div class="homepageOurteamContent">
             <div class="itemCardPadding">
                 <a class=" itemCardValue  ">{{homePageArray[0]}} </a>
@@ -57,7 +38,7 @@
         <div class="homepageItemHeader flexCenter">
         </div>
         <div class="homepageOurteamContent">
-            <img class="homepageOurteamimage"
+            <img class=" homepageOurteamimage itemCardPadding "
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2Four%20project.jpg?alt=media&token=5c1c81df-62fe-44ef-9939-602d80b5a577">
             <div class="itemCardPadding">
                 <a class=" itemCardValue  ">{{homePageArray[2]}} </a>
@@ -76,12 +57,10 @@
     </div>
 
     <!-- contact us -->
-    <div class="contactUs ">
-        <div class="contactsUsItemList  itemCardPadding" [style]="'align-items: first baseline;'">
+    <div class="contactUs flexList">
+        <div class="contactsUsItemList  itemCardPadding " [style]="'align-items: first baseline;'">
             <div class="item itemCardMargin" *ngFor="let x of contactsUsItemList">
-                <b class="itemCardContent itemValue">
-                    {{x.egName}}
-                </b>
+                <b class="itemCardContent itemValue"> {{x.egName}}</b>
                 <a class="itemCardValue itemValue "> {{x.englishAddress}} </a>
                 <a class="itemCardValue itemValue "> {{x.chineseAddress}} </a>
                 <a class="itemCardValue itemValue "> {{x.zhTelephone}} </a>
@@ -90,5 +69,4 @@
             </div>
         </div>
     </div>
-
 </div>

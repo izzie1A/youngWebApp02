@@ -4,7 +4,6 @@
         1px -1px 0 #000,
         -1px -1px 0 #000;
     max-height: 60%;
-    /* min-height: 40%; */
     min-width: 60%;
     max-width: 80%;
     bottom: 15%;
@@ -16,18 +15,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-
-    /* background-color: red; */
-
-}
-.homepageContainerImageOverlayImage{
-
 }
 .homepageContainer {
     display: flex;
     flex-direction: column;
 }
-
 .homepageContainerImage {
     width: 100%;
 }
@@ -35,7 +27,6 @@
 .homepageOurteamContent {
     display: grid;
     grid-template-columns: 50% 50%;
-    align-items: center;
 }
 
 .homepageOurteamHeaderIcon {
@@ -70,10 +61,6 @@
 
 .x {
     height: 100%;
-    /* display: grid;
-    grid-template-rows: 30% 20% 50%;
-    align-items: center;
-    justify-items: center; */
 }
 
 .homepageContainerImageOverlayTitleText1 {
@@ -123,27 +110,23 @@
 }
 
 .contactsUsItemList {
-    /* position: relative; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-columns: 50% 50%;
-    /* justify-content: space-evenly; */
 }
 
 .contactsUsItemList .item {
-    /* height: 100%; */
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     padding: 2%;
-    /* align-items: baseline; */
     height:50vh;
-    /* background-color: blue; */
+    height:min(50vh,200px);
 }
 .contactsUsItemList .itemValue {
-    height:10vh;
-    /* background-color: red;+
-    
-    */
+    padding:1%;
+    margin:1%;
+    min-height:var(--content);
+    overflow: hidden;
 }
 
 .contactsUsItemImg {
