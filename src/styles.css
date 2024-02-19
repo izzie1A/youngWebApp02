@@ -59,9 +59,9 @@ body {
         /* --title: 4ch;
         --content: 3ch;
         --keyValue: 2ch; */
-        --title: 3.5ch;
+        /* --title: 3.5ch;
         --content: 2.5ch;
-        --keyValue: 1.5ch;
+        --keyValue: 1.5ch; */
     }
     .itemImageFrame {
         height: 60px;
@@ -79,22 +79,22 @@ body {
 }
 
 @media only screen and (min-width: 1500px) {
-    :root {
+    /* :root {
         --imgS: 48px;
         --imgM: 192px;
         --imgL: 384px;
         --title: 5ch;
         --content: 4ch;
         --keyValue: 3ch;
-    }
-    /* :root {
+    } */
+    :root {
         --imgS: 48px;
         --imgM: 192px;
         --imgL: 384px;
         --title: 4.5ch;
         --content: 3.5ch;
         --keyValue: 2.5ch;
-    } */
+    }
 
     /* 
     .itemCardTitle {
