@@ -26,6 +26,7 @@ import { HomePageComponent } from './components/slides/home-page/home-page.compo
 import { OurClientComponent } from './components/slides/our-client/our-client.component';
 import { OurProjectComponent } from './components/slides/our-project/our-project.component';
 import { OurProjectDetailComponent } from './components/slides/our-project-detail/our-project-detail.component';
+import { OurProjectCategoriesComponent } from './components/slides/our-project-categories/our-project-categories.component';
 import { OurTeamComponent } from './components/slides/our-team/our-team.component';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 
@@ -52,6 +53,7 @@ import { YungCertGallaryComponent } from './components/yung-cert-gallary/yung-ce
     ImageViewerComponent,
     CaroselComponent,
     YungCertGallaryComponent,
+    OurProjectCategoriesComponent,
   ],
   imports: [
     BrowserModule,

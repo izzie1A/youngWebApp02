@@ -1,6 +1,7 @@
 <app-image-viewer *ngIf="imageHolder!!||imageListHolder!!" [image]="imageHolder" [imageList]="imageListHolder"
     (newItemEvent)="viewImageList($event)"></app-image-viewer>
 <!-- {{getTitle(getAddress)}} -->
+
 <div class="ourProjectDetailContainer">
     <div class="ourProjectDetailHeader">
     </div>
@@ -15,27 +16,31 @@
             </a>
         </div>
     </div>
-    {{detailMenuSelector}}
-    <br>
-    {{resultText}}
     <div class=" detailCatBtnList ">
-        <button class=" detailCatBtn itemButton" *ngFor="let x of detailMenu" (click)="detailMenuSelect(x)">
-            <b class="itemCardContent">{{x}}</b>
+        <!-- <button [routerLink]="'OurProjectCategoriesComponent/'+replaceSpacesWithUnderscores(x)" class=" detailCatBtn itemButton" *ngFor="let x of detailMenu" (click)="detailMenuSelect(x)">
+            <a class="itemCardContent"
+                > {{x}} </a>
+        </button> -->
+        <!-- {{this.router.url.split('/')}} -->
+        <button
+            [routerLink]="'/OurProjectCategoriesComponent/'+getLocation(this.getAddress)+'/'+replaceSpacesWithUnderscores(x)"
+            class=" detailCatBtn itemButton" *ngFor="let x of detailMenu" (click)="detailMenuSelect(x)">
+            <!-- <a [routerLink]="'/OurProjectCategoriesComponent/'+replaceSpacesWithUnderscores(x)">aaaa</a> -->
+            <b class="itemCardContent"> {{x}} </b>
         </button>
     </div>
 
-    <div class="ourProjectDetailItemList">
+    <!-- <router-outlet></router-outlet> -->
+
+    <!-- <div class="ourProjectDetailItemList">
         <div class="ourProjectDetailItem" *ngFor="let x of firebaseCollection|async">
-            <!-- <img (click)="viewImage(image.src)" class="ourProjectDetailImage" [src]="x.imageArray[0]" #image> -->
-            <!-- <div class="ourProjectDetailImageFrame">
-                <img loading="lazy" (click)="viewImageList(x.imageArray)" class="ourProjectDetailImage"
-                    [src]="x.imageArray[0]">
-            </div> -->
+            <b class="itemCardContent"
+                [routerLink]="'OurProjectCategoriesComponent/'+replaceSpacesWithUnderscores(x.name)"> {{x.name}} </b>
             <div (click)="viewImageList(x.imageArray)" class="ourProjectDetailItemTitle itemButton ">
                 <b>
                     {{x.name}}
                 </b>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

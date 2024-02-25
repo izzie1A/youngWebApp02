@@ -12,7 +12,7 @@ export class OurProjectComponent {
 	ourProjectList: OurProjectItem[] = [];
 
 	ourProjectHolder: any;
-	ourProjectHolderState: string = 'Current';
+	ourProjectHolderState: string = 'Completed';
 
 	ourCurrentProject: OurProjectItem[] = [];
 	ourCompletedProject: OurProjectItem[] = [];
@@ -20,7 +20,7 @@ export class OurProjectComponent {
 	ourTeamList: OurProjectItem[] = [];
 
 	constructor(public fbS: FirebaseControlService) {
-		let address = 'yungFolder/pageControl/ourProjectCurrent'
+		let address = 'yungFolder/pageControl/ourProjectCompleted'
 		this.getprojectList(address);
 		this.ourProjectHolder = this.ourCompletedProject;
 	}
@@ -59,6 +59,9 @@ export class OurProjectComponent {
 			this.getprojectList('yungFolder/pageControl/ourProjectCurrent');
 		}
 	}
+
+
+
 }
 class OurProjectItem {
 	imgListIndex: number = 0;

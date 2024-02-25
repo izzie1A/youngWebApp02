@@ -7,6 +7,7 @@ import { ContactUsComponent } from './components/slides/contact-us/contact-us.co
 import { HomePageComponent } from './components/slides/home-page/home-page.component';
 import { OurClientComponent } from './components/slides/our-client/our-client.component';
 import { OurProjectComponent } from './components/slides/our-project/our-project.component';
+import { OurProjectCategoriesComponent } from './components/slides/our-project-categories/our-project-categories.component';
 import { OurProjectDetailComponent } from './components/slides/our-project-detail/our-project-detail.component';
 import { OurTeamComponent } from './components/slides/our-team/our-team.component';
 import { YungCertGallaryComponent } from "src/app/components/yung-cert-gallary/yung-cert-gallary.component";
@@ -25,7 +26,22 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'ourProjectDetail', component: OurProjectDetailComponent,data: { animation: 'ourProjectDetail' },
+    path: 'ourProjectDetail/:id', component: OurProjectDetailComponent,data: { animation: 'ourProjectDetail' },
+    // children: [
+    //   {
+    //     path: 'OurProjectCategoriesComponent', // child route path
+    //     component: OurProjectCategoriesComponent, // child route component that the router renders
+    //     children: [
+    //       {
+    //         path: ':name', // child route path
+    //         component: OurProjectCategoriesComponent, // child route component that the router renders
+    //       },
+    //     ],
+    //   },
+    // ],
+  },
+  {
+    path: 'OurProjectCategoriesComponent/:id', component: OurProjectCategoriesComponent,data: { animation: 'ourProjectDetail' },
     children: [
       {
         path: ':name', // child route path

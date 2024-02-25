@@ -2,15 +2,14 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Firestore, collectionData, collection, doc, deleteDoc, setDoc, getDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router'
-import { switchMap } from 'rxjs/operators'
 import { FirebaseControlService } from "src/app/services/firebase-control.service";
 
 @Component({
-  selector: 'app-our-project-detail',
-  templateUrl: './our-project-detail.component.html',
-  styleUrls: ['./our-project-detail.component.css']
+  selector: 'app-our-project-categories',
+  templateUrl: './our-project-categories.component.html',
+  styleUrls: ['./our-project-categories.component.css']
 })
-export class OurProjectDetailComponent implements OnInit {
+export class OurProjectCategoriesComponent {
   firestore: Firestore = inject(Firestore);
 
   getAddress: any;
@@ -26,74 +25,62 @@ export class OurProjectDetailComponent implements OnInit {
   location: string = '';
 
   detailMenu = ['Department Store', 'Hotel', 'Restaurant', 'Theme Park']
-  detailMenuHK = ["Residential","Commercial","Hotel","Theme Park","Retail"]
+  detailMenuHK = ["Residential", "Commercial", "Hotel", "Theme Park", "Retail"]
   detailMenuMC = ['Casino', 'Hotel', 'Restaurant', 'Retail']
   detailMenuCH = ['Residentia', 'Hotel', 'Retail']
   detailMenuSelector = ''
 
-  constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, public router: Router) {
-    let x = this.router.url.split('/')
-    this.getAddress = "yungFolder/ourProject/" + x[x.length - 1];
-    console.warn(this.getAddress);
-    const itemCollection = collection(this.firestore, this.getAddress);
-    this.firebaseCollection = collectionData(itemCollection);
-    this.getTitle(this.getAddress);
+  urlArray = this.router.url.split('/');
 
-    this.t();
+  constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, public router: Router) {
+    let x = this.router.url.split('/');
+    this.getAddress = this.urlArray[this.urlArray.length - 2] ;
+    console.warn(this.getAddress);
+    let a = 'yungFolder/ourProject/'+this.urlArray[this.urlArray.length - 2];
+    const itemCollection = collection(this.firestore, a);
+    this.firebaseCollection = collectionData(itemCollection);
+    // this.getTitle(this.getAddress);
+    // this.t();
   }
 
   async ngOnInit() {
   }
+  getFolderAddress(){
 
-  detailMenuSelect(input: string) {
-    this.detailMenuSelector = input;
-    let result = ['/yungFolder/ourProject/testHK', 100, "tag", "==", input, 'name'];
-    console.warn(result);
-    this.fbs.writeUserData('/yungFolder/ourProject/testHK', {
-      name: "Los Angeles",
-    })
-    // tag: ["USA", "USA2", "USA3"],
-    console.log('testWritted')
   }
 
-  async t() {
-    let result = await this.fbs.queryCondition('/yungFolder/ourClient/clientReference', 100, "name", "!=", 'null', 'name');
-    let pageItemlength = 9;
-    let pageItemArray = [];
-    console.warn(result)
-    for (let i = 0; i < result.length; i++) {
-      let subArray = []
-      for (let j = 0; j < pageItemlength; j++) {
-        i++;
-        console.log(i);
-        subArray.push(result[i]);
-      }
-      pageItemArray.push(subArray);
-    }
-    console.log(pageItemArray);
-  }
-  // async switchProject() {
-  //   const docRef = doc(this.firestore, "yungFolder", "chinaProjectList");
-  //   const docSnap = await getDoc(docRef);
-  //   if (docSnap.exists()) {
-  //     console.log("Document data:", docSnap.data());
-  //     this.firestoreItemContainer = docSnap.data();
-  //   } else {
-  //     this.firestoreItemContainer = null;
-  //     console.log("No such document!");
-  //     this.firestoreItemContainer = {
-  //       title: 'no such document',
-  //     };
-  //   }
-  // }
-  getLocation(address: string){
+  getLocation(address: string) {
     const myArray: string[] = address.split('/');
     const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);
+    capArray[capArray.length - 1] == 'complete' ? this.projectState = 'Current' : this.projectState = 'Completed'
+    let x = capArray[0];
+    switch (x) {
+      case 'china': {
+        x = "China";
+        break;
+      };
+      case 'hk': {
+        x = "Hong Kong";
+        break;
+      };
+      case 'macau': {
+        x = "Macau";
+        break;
+      };
+      case 'overseas': {
+        x = "Oversea";
+        break;
+      };
+    }
+    return x
+  }
+  getCat(address: string) {
+    const myArray: string[] = address.split('/');
     return myArray[myArray.length - 1]
   }
   // current
   getTitle(address: string) {
-    let ans = "Completed projects in ";
+    let ans = "Completed" + this.urlArray[this.urlArray.length - 1] + " projects in ";
     let ans2 = "Current projects in ";
     const myArray: string[] = address.split('/');
     const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);
@@ -120,7 +107,7 @@ export class OurProjectDetailComponent implements OnInit {
         break;
       };
     }
-    
+
     let result = this.projectState + ' projects in ' + this.location;
     this.resultText = result;
 
@@ -151,23 +138,21 @@ export class OurProjectDetailComponent implements OnInit {
       case 'yungFolder/ourProject/overseasProjectListComplete': {
         return ans + "Oversea";
       };
-   }
-   return
+    }
+    return
   }
-
-  writeProject() { }
 
   viewImageList(imageRef: any[] | string) {
     console.warn(imageRef)
     this.imageListHolder = imageRef;
   }
-  
-	replaceSpacesWithUnderscores(inputString : string) {
-		return inputString.replace(/ /g, "_");
-	}
-	replaceSpacesWithSpacebar(inputString : string) {
-		return inputString.replace(/ /g, "_");
-	}
+
+  replaceSpacesWithUnderscores(inputString: string) {
+    return inputString.replace(/ /g, "_");
+  }
+  replaceSpacesWithSpacebar(inputString: string) {
+    return inputString.replace(/ /g, "_");
+  }
 }
 
 interface projectMenu {

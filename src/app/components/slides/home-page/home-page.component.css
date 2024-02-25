@@ -127,6 +127,7 @@
     margin:1%;
     min-height:var(--content);
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .contactsUsItemImg {

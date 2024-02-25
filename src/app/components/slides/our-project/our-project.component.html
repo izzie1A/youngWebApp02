@@ -17,10 +17,13 @@
         (click)="selectTeamList('Current')">Current Project</button>
 </div>
 
+<!--  -->
 <div class="flexList" *ngIf="ourProjectHolderState=='Current'">
     <img class="ourLayImg" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FCurrent%20Job%20(Jan2024)-1.png?alt=media&token=980428ac-2c9d-4d6c-822b-b2c64b1a9db8" >
     <img class="ourLayImg" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/yungFolder%2F0material%2FCurrent%20Job%20(Jan2024)-2.png?alt=media&token=382972bc-9bc9-4403-90e3-4d13c6acb4b4" >
 </div>
+<!--  -->
+<!--  -->
 <div class="itemCardPadding" *ngIf="ourProjectHolderState!='Current'" >
     <div *ngFor="let ourProjectContainer of ourTeamList; index as i;">
         <div class="ourProjectItem " *ngIf="i%2==0">
