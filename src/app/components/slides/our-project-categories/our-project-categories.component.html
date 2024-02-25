@@ -22,9 +22,6 @@
             </a>
         </div>
     </div>
-    <!-- <router-outlet></router-outlet> -->
-    {{this.getAddress}}
-
     <div class="ourProjectDetailItemList">
         <div class="ourProjectDetailItem" *ngFor="let x of firebaseCollection|async">
             <!-- <b class="itemCardContent"
@@ -32,7 +29,7 @@
             <div (click)="viewImageList(x.imageArray)" class="ourProjectDetailItemTitle itemButton  ">
                 <div class="flexList  ">
                     <div class="ourProjectDetailImageFrame  ">
-                        <img class="ourProjectDetailImage" src="{{x.imageArray[0]}}">
+                        <img loading="lazy" class="ourProjectDetailImage" src="{{x.imageArray[0]}}">
                     </div>
                     <b>
                         {{x.name}}
