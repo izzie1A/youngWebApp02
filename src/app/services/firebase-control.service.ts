@@ -15,17 +15,17 @@ export class FirebaseControlService {
     console.log('firebase control');
   }
   async queryCondition(address: string, amountLimit: number, condton1: string, condton2: WhereFilterOp, condton3: string, orderby: string | 'name' | 'date') {
-    console.log(condton1);
     let result: DocumentData[] = [];
     const q = await query(
       collection(this.firestore, address),
       where(condton1, condton2, condton3),
-      orderBy("name"),
+      orderBy(orderby),
       limit(amountLimit));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       result.push({ id: doc.id, data: doc.data() });
     });
+
     return result
   }
   // firestore curd

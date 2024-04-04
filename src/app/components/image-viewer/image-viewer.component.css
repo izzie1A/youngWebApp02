@@ -1,6 +1,6 @@
 .imageViewerFlex {
     display: flex;
-    width: 50%;
+    /* width: 50%; */
     justify-content: space-evenly;
     align-items: center;
     z-index: 2;

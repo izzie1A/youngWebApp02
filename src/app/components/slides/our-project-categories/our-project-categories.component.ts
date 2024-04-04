@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router'
 import { FirebaseControlService } from "src/app/services/firebase-control.service";
 
+import { query, orderBy, limit } from "firebase/firestore";  
+
 @Component({
   selector: 'app-our-project-categories',
   templateUrl: './our-project-categories.component.html',
@@ -13,9 +15,11 @@ export class OurProjectCategoriesComponent {
   firestore: Firestore = inject(Firestore);
 
   getAddress: any;
+  fbAddress:string = '';
 
   firestoreItemContainer: any;
   firebaseCollection: Observable<any>
+  firebaseCollection2: any
 
   imageHolder: any;
   imageListHolder: any;
@@ -33,20 +37,25 @@ export class OurProjectCategoriesComponent {
   urlArray = this.router.url.split('/');
 
   constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, public router: Router) {
-    let x = this.router.url.split('/');
     this.getAddress = this.urlArray[this.urlArray.length - 2] ;
-    console.warn(this.getAddress);
     let a = 'yungFolder/ourProject/'+this.urlArray[this.urlArray.length - 2];
+    this.fbAddress = 'yungFolder/ourProject/'+this.urlArray[this.urlArray.length - 2];
     const itemCollection = collection(this.firestore, a);
     this.firebaseCollection = collectionData(itemCollection);
     // this.getTitle(this.getAddress);
     // this.t();
-  }
+    console.log('get',a)
+    console.log(this.urlArray[this.urlArray.length - 1]);
+    console.log(this.getLocation(this.urlArray[this.urlArray.length - 2]));
+    const q = query(collection(this.firestore, a), orderBy("name"), limit(3));
+    console.log(q)
 
-  async ngOnInit() {
+    this.firebaseCollection2 = this.t();
   }
-  getFolderAddress(){
-
+  async t() {
+    let result = await this.fbs.queryCondition(this.fbAddress, 10, "calgary", "!=", 'null','calgary');
+    console.log(result);
+    return result
   }
 
   getLocation(address: string) {
