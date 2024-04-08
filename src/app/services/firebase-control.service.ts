@@ -14,18 +14,23 @@ export class FirebaseControlService {
   constructor() {
     console.log('firebase control');
   }
-  async queryCondition(address: string, amountLimit: number, condton1: string, condton2: WhereFilterOp, condton3: string, orderby: string | 'name' | 'date') {
-    let result: DocumentData[] = [];
+  async queryCondition(
+    address: string,
+    amountLimit: number,
+    condton1: string,
+    condton2: WhereFilterOp,
+    condton3: string,
+    orderby: string | 'name' | 'date') {
     const q = await query(
       collection(this.firestore, address),
       where(condton1, condton2, condton3),
       orderBy(orderby),
       limit(amountLimit));
     const querySnapshot = await getDocs(q);
+    let result: DocumentData[] = [];
     querySnapshot.forEach((doc) => {
       result.push({ id: doc.id, data: doc.data() });
     });
-
     return result
   }
   // firestore curd
@@ -127,19 +132,19 @@ export class FirebaseControlService {
 
 export interface firebaseObject {
   name: string,
-  content?:any[],
+  content?: any[],
 }
 export interface fireObject {
   name: string,
   id: string,
-  content?:any[],
+  content?: any[],
 }
 
-interface f1{
+interface f1 {
   tag: string[],
-  ct1:string,
+  ct1: string,
 }
 
-interface f2{
-  ct2:string,
+interface f2 {
+  ct2: string,
 }

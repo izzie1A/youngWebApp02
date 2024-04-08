@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Firestore, collectionData, collection, doc, deleteDoc, setDoc, getDoc } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, doc, deleteDoc, setDoc, getDoc, WhereFilterOp } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router'
 import { FirebaseControlService } from "src/app/services/firebase-control.service";
 
-import { query, orderBy, limit } from "firebase/firestore";  
+import { query, orderBy, limit } from "firebase/firestore";
 
 @Component({
   selector: 'app-our-project-categories',
@@ -15,7 +15,7 @@ export class OurProjectCategoriesComponent {
   firestore: Firestore = inject(Firestore);
 
   getAddress: any;
-  fbAddress:string = '';
+  fbAddress: string = 'yungFolder/ourProject/' + this.router.url.split('/')[this.router.url.split('/').length - 2];;
 
   firestoreItemContainer: any;
   firebaseCollection: Observable<any>
@@ -27,6 +27,7 @@ export class OurProjectCategoriesComponent {
 
   projectState: string = '';
   location: string = '';
+  cat: string = this.router.url.split('/')[this.router.url.split('/').length - 1];
 
   detailMenu = ['Department Store', 'Hotel', 'Restaurant', 'Theme Park']
   detailMenuHK = ["Residential", "Commercial", "Hotel", "Theme Park", "Retail"]
@@ -37,23 +38,39 @@ export class OurProjectCategoriesComponent {
   urlArray = this.router.url.split('/');
 
   constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, public router: Router) {
-    this.getAddress = this.urlArray[this.urlArray.length - 2] ;
-    let a = 'yungFolder/ourProject/'+this.urlArray[this.urlArray.length - 2];
-    this.fbAddress = 'yungFolder/ourProject/'+this.urlArray[this.urlArray.length - 2];
+    this.getAddress = this.urlArray[this.urlArray.length - 2];
+    let a = 'yungFolder/ourProject/' + this.urlArray[this.urlArray.length - 2];
+    // this.fbAddress = 'yungFolder/ourProject/'+this.urlArray[this.urlArray.length - 2];
     const itemCollection = collection(this.firestore, a);
     this.firebaseCollection = collectionData(itemCollection);
     // this.getTitle(this.getAddress);
     // this.t();
-    console.log('get',a)
+    console.log('get', a)
     console.log(this.urlArray[this.urlArray.length - 1]);
     console.log(this.getLocation(this.urlArray[this.urlArray.length - 2]));
     const q = query(collection(this.firestore, a), orderBy("name"), limit(3));
     console.log(q)
 
     this.firebaseCollection2 = this.t();
+
+    console.log(this.fbAddress);
+    // this.firebaseCollection2 = this.t2("calgary", "==", 'restaurant','calgary');
+    // let st = this.cat.toString()
+    // this.firebaseCollection2 = this.t2("calgary", "==", this.getCat(), 'calgary');
+    // this.firebaseCollection2 = this.t2("calgary", "==", 'hotel', 'calgary');
+
   }
   async t() {
-    let result = await this.fbs.queryCondition(this.fbAddress, 10, "calgary", "!=", 'null','calgary');
+    console.log(this.fbAddress);
+    // let result = await this.fbs.queryCondition(this.fbAddress, 10, "calgary", "!=", 'null', 'calgary');
+    // alert()
+    let result = await this.fbs.queryCondition(this.fbAddress, 10, "calgary", "==", this.getCat(), 'calgary');
+    console.log(result);
+    return result
+  }
+  async t2(cat: string, condition: WhereFilterOp, value: string, orderBy: string) {
+    console.log(value);
+    let result = await this.fbs.queryCondition(this.fbAddress, 10, cat, condition, value, orderBy);
     console.log(result);
     return result
   }
@@ -83,9 +100,11 @@ export class OurProjectCategoriesComponent {
     }
     return x
   }
-  getCat(address: string) {
-    const myArray: string[] = address.split('/');
-    return myArray[myArray.length - 1]
+  getCat(): string {
+    const myArray: string[] = this.router.url.split('/');
+    let result = myArray[myArray.length - 1].toString();
+    result = this.transformString(result);
+    return result
   }
   // current
   getTitle(address: string) {
@@ -161,6 +180,16 @@ export class OurProjectCategoriesComponent {
   }
   replaceSpacesWithSpacebar(inputString: string) {
     return inputString.replace(/ /g, "_");
+  }
+  transformString(input: string): string {
+    let transformedString = input.replace(/ /g, '_');
+    transformedString = transformedString.toLowerCase();
+    return transformedString;
+  }
+  transformTitle(input: string): string {
+    let transformedString = input.replace(/_/g, ' ');
+    transformedString = transformedString.charAt(0).toUpperCase() + transformedString.slice(1).toLowerCase();
+    return transformedString;
   }
 }
 

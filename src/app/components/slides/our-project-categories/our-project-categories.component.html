@@ -12,19 +12,13 @@
             <img class="ourLayIcon"
                 src="https://firebasestorage.googleapis.com/v0/b/camera-af868.appspot.com/o/fuji%20logo%20ver2%203%20(green).png?alt=media&amp;token=13fa8018-5715-4f23-b8c9-4ffd5fd4a181">
             <a class="ourLayTitle">
-                <!-- {{this.getCat(urlArray[urlArray.length -a 2])}} -->
-                <!-- {{this.getTitle(urlArray[urlArray.length - 1])}} -->
-                {{urlArray[urlArray.length - 1]}}
-                <!-- {{urlArray[urlArray.length - 2]}} -->
-                <!-- {{resultText}} -->
+                {{transformTitle(getCat())}}
                 in
                 {{getLocation(urlArray[urlArray.length - 2])}}
             </a>
         </div>
     </div>
-    <!-- {{getAddress}} -->
-    {{urlArray[urlArray.length - 1]}}
-    {{getLocation(urlArray[urlArray.length - 2])}}
+    {{getCat()}}
     <div class="ourProjectDetailItemList">
         <div class="ourProjectDetailItem" *ngFor="let x of firebaseCollection2|async">
             <!-- <b class="itemCardContent"
@@ -36,7 +30,10 @@
                     </div>
                     <b>
                         {{x.data.name}}
-                    </b>aa
+                    </b>
+                    <a>
+                        {{x.data.calgary}}
+                    </a>
                     <!-- {{x.imageArray[0]}} -->
                 </div>
             </div>
