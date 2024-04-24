@@ -25,24 +25,47 @@ export class OurProjectDetailComponent implements OnInit {
   projectState: string = '';
   location: string = '';
 
+  detailMenuHolder:string[]= [];
   detailMenu = ['Department Store', 'Hotel', 'Restaurant', 'Theme Park']
   detailMenuHK = ["Residential","Commercial","Hotel","Theme Park","Retail"]
   detailMenuMC = ['Casino', 'Hotel', 'Restaurant', 'Retail']
-  detailMenuCH = ['Residentia', 'Hotel', 'Retail']
+  detailMenuCH = ['Resident', 'Hotel', 'Retail']
   detailMenuSelector = ''
 
   constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, public router: Router) {
     let x = this.router.url.split('/')
     this.getAddress = "yungFolder/ourProject/" + x[x.length - 1];
-    console.warn(this.getAddress);
     const itemCollection = collection(this.firestore, this.getAddress);
     this.firebaseCollection = collectionData(itemCollection);
-    this.getTitle(this.getAddress);
 
-    this.t();
+    this.getTitle(this.getAddress);
+    // this.t();
+    this.getCatList();
   }
 
   async ngOnInit() {
+  }
+
+  getCatList(){
+    // this.detailMenuHolder = this.detailMenuCH; 
+    const myArray: string[] = this.getAddress.split('/');
+    const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);
+    capArray[capArray.length - 1] == 'complete' ? this.projectState = 'Current' : this.projectState = 'Completed'
+    switch (capArray[0]) {
+      // complete
+      case 'china': {
+        this.detailMenuHolder = this.detailMenuCH; 
+        break;
+      };
+      case 'hk': {
+        this.detailMenuHolder = this.detailMenuHK; 
+        break;
+      };
+      case 'macau': {
+        this.detailMenuHolder = this.detailMenuMC; 
+        break;
+      };
+    }
   }
 
   detailMenuSelect(input: string) {
@@ -52,8 +75,6 @@ export class OurProjectDetailComponent implements OnInit {
     this.fbs.writeUserData('/yungFolder/ourProject/testHK', {
       name: "Los Angeles",
     })
-    // tag: ["USA", "USA2", "USA3"],
-    console.log('testWritted')
   }
 
   async t() {
@@ -72,20 +93,7 @@ export class OurProjectDetailComponent implements OnInit {
     }
     console.log(pageItemArray);
   }
-  // async switchProject() {
-  //   const docRef = doc(this.firestore, "yungFolder", "chinaProjectList");
-  //   const docSnap = await getDoc(docRef);
-  //   if (docSnap.exists()) {
-  //     console.log("Document data:", docSnap.data());
-  //     this.firestoreItemContainer = docSnap.data();
-  //   } else {
-  //     this.firestoreItemContainer = null;
-  //     console.log("No such document!");
-  //     this.firestoreItemContainer = {
-  //       title: 'no such document',
-  //     };
-  //   }
-  // }
+
   getLocation(address: string){
     const myArray: string[] = address.split('/');
     const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);

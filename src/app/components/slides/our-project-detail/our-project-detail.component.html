@@ -23,7 +23,7 @@
         <!-- {{this.router.url.split('/')}} -->
         <button
             [routerLink]="'/OurProjectCategoriesComponent/'+getLocation(this.getAddress)+'/'+replaceSpacesWithUnderscores(x)"
-            class=" detailCatBtn itemButton" *ngFor="let x of detailMenu" (click)="detailMenuSelect(x)">
+            class=" detailCatBtn itemButton" *ngFor="let x of detailMenuHolder" (click)="detailMenuSelect(x)">
             <!-- <a [routerLink]="'/OurProjectCategoriesComponent/'+replaceSpacesWithUnderscores(x)">aaaa</a> -->
             <b class="itemCardContent"> {{x}} </b>
         </button>

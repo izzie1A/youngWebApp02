@@ -1,7 +1,5 @@
 <app-image-viewer *ngIf="imageHolder!!||imageListHolder!!" [image]="imageHolder" [imageList]="imageListHolder"
     (newItemEvent)="viewImageList($event)"></app-image-viewer>
-<!-- {{getTitle(getAddress)}} -->
-
 <div class="ourProjectDetailContainer">
     <div class="ourProjectDetailHeader">
     </div>
@@ -18,12 +16,9 @@
             </a>
         </div>
     </div>
-    {{getCat()}}
     <div class="ourProjectDetailItemList">
         <div class="ourProjectDetailItem" *ngFor="let x of firebaseCollection2|async">
-            <!-- <b class="itemCardContent"
-                [routerLink]="'OurProjectCategoriesComponent/'+replaceSpacesWithUnderscores(x.name)"> {{x.name}} </b> -->
-             <div (click)="viewImageList(x.data.imageArray)" class="ourProjectDetailItemTitle itemButton  ">
+            <div (click)="viewImageList(x.data.imageArray)" class="ourProjectDetailItemTitle itemButton  ">
                 <div class="flexList  ">
                     <div class="ourProjectDetailImageFrame  ">
                         <img loading="lazy" class="ourProjectDetailImage" src="{{x.data.imageArray[0]}}">
@@ -31,26 +26,8 @@
                     <b>
                         {{x.data.name}}
                     </b>
-                    <a>
-                        {{x.data.calgary}}
-                    </a>
-                    <!-- {{x.imageArray[0]}} -->
                 </div>
             </div>
         </div>
-
-
-        <!-- <div class="ourProjectDetailItem" *ngFor="let x of firebaseCollection|async">
-            <div (click)="viewImageList(x.imageArray)" class="ourProjectDetailItemTitle itemButton  ">
-                <div class="flexList  ">
-                    <div class="ourProjectDetailImageFrame  ">
-                        <img loading="lazy" class="ourProjectDetailImage" src="{{x.imageArray[0]}}">
-                    </div>
-                    <b>
-                        {{x.name}}
-                    </b>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>

@@ -18,7 +18,6 @@ export class OurProjectCategoriesComponent {
   fbAddress: string = 'yungFolder/ourProject/' + this.router.url.split('/')[this.router.url.split('/').length - 2];;
 
   firestoreItemContainer: any;
-  firebaseCollection: Observable<any>
   firebaseCollection2: any
 
   imageHolder: any;
@@ -38,43 +37,16 @@ export class OurProjectCategoriesComponent {
   urlArray = this.router.url.split('/');
 
   constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, public router: Router) {
-    this.getAddress = this.urlArray[this.urlArray.length - 2];
-    let a = 'yungFolder/ourProject/' + this.urlArray[this.urlArray.length - 2];
-    // this.fbAddress = 'yungFolder/ourProject/'+this.urlArray[this.urlArray.length - 2];
-    const itemCollection = collection(this.firestore, a);
-    this.firebaseCollection = collectionData(itemCollection);
-    // this.getTitle(this.getAddress);
-    // this.t();
-    console.log('get', a)
-    console.log(this.urlArray[this.urlArray.length - 1]);
-    console.log(this.getLocation(this.urlArray[this.urlArray.length - 2]));
-    const q = query(collection(this.firestore, a), orderBy("name"), limit(3));
-    console.log(q)
-
     this.firebaseCollection2 = this.t();
-
-    console.log(this.fbAddress);
-    // this.firebaseCollection2 = this.t2("calgary", "==", 'restaurant','calgary');
-    // let st = this.cat.toString()
-    // this.firebaseCollection2 = this.t2("calgary", "==", this.getCat(), 'calgary');
-    // this.firebaseCollection2 = this.t2("calgary", "==", 'hotel', 'calgary');
-
   }
+
   async t() {
-    console.log(this.fbAddress);
-    // let result = await this.fbs.queryCondition(this.fbAddress, 10, "calgary", "!=", 'null', 'calgary');
-    // alert()
-    let result = await this.fbs.queryCondition(this.fbAddress, 10, "calgary", "==", this.getCat(), 'calgary');
-    console.log(result);
-    return result
-  }
-  async t2(cat: string, condition: WhereFilterOp, value: string, orderBy: string) {
-    console.log(value);
-    let result = await this.fbs.queryCondition(this.fbAddress, 10, cat, condition, value, orderBy);
+    let result = await this.fbs.queryCondition(this.fbAddress, 20, "calgary", "==", this.getCat(), 'calgary');
     console.log(result);
     return result
   }
 
+  
   getLocation(address: string) {
     const myArray: string[] = address.split('/');
     const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);
