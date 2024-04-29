@@ -25,12 +25,14 @@ export class OurProjectDetailComponent implements OnInit {
   projectState: string = '';
   location: string = '';
 
-  detailMenuHolder:string[]= [];
+  detailMenuHolder: string[] = [];
   detailMenu = ['Department Store', 'Hotel', 'Restaurant', 'Theme Park']
-  detailMenuHK = ["Residential","Commercial","Hotel","Theme Park","Retail"]
+  detailMenuHK = ["Residential", "Commercial", "Hotel", "Theme Park", "Retail"]
   detailMenuMC = ['Casino', 'Hotel', 'Restaurant', 'Retail']
   detailMenuCH = ['Resident', 'Hotel', 'Retail']
   detailMenuSelector = ''
+
+  item$: Observable<any[]> | undefined;
 
   constructor(private fbs: FirebaseControlService, private route: ActivatedRoute, public router: Router) {
     let x = this.router.url.split('/')
@@ -46,26 +48,42 @@ export class OurProjectDetailComponent implements OnInit {
   async ngOnInit() {
   }
 
-  getCatList(){
+
+
+  getCatList() {
     // this.detailMenuHolder = this.detailMenuCH; 
+    let add = ''
     const myArray: string[] = this.getAddress.split('/');
     const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);
     capArray[capArray.length - 1] == 'complete' ? this.projectState = 'Current' : this.projectState = 'Completed'
     switch (capArray[0]) {
       // complete
       case 'china': {
-        this.detailMenuHolder = this.detailMenuCH; 
+        this.detailMenuHolder = this.detailMenuCH;
+        add = 'yungFolder/pageControl/calgaryChina'
         break;
       };
       case 'hk': {
-        this.detailMenuHolder = this.detailMenuHK; 
+        this.detailMenuHolder = this.detailMenuHK;
+        add = 'yungFolder/pageControl/calgaryHongKong'
         break;
       };
       case 'macau': {
-        this.detailMenuHolder = this.detailMenuMC; 
+        this.detailMenuHolder = this.detailMenuMC;
+        add = 'yungFolder/pageControl/calgaryMacau'
         break;
       };
     }
+    this.item$ = this.fbs.t(add);
+    this.item$.subscribe((x)=>{
+      console.warn(x)
+      let y:string[] = [];
+      x.forEach((number) => {
+      y.push(number.name);
+      });
+      this.detailMenuHolder = y;
+    })
+    return capArray[0]
   }
 
   detailMenuSelect(input: string) {
@@ -94,7 +112,7 @@ export class OurProjectDetailComponent implements OnInit {
     console.log(pageItemArray);
   }
 
-  getLocation(address: string){
+  getLocation(address: string) {
     const myArray: string[] = address.split('/');
     const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);
     return myArray[myArray.length - 1]
@@ -128,7 +146,7 @@ export class OurProjectDetailComponent implements OnInit {
         break;
       };
     }
-    
+
     let result = this.projectState + ' projects in ' + this.location;
     this.resultText = result;
 
@@ -159,8 +177,8 @@ export class OurProjectDetailComponent implements OnInit {
       case 'yungFolder/ourProject/overseasProjectListComplete': {
         return ans + "Oversea";
       };
-   }
-   return
+    }
+    return
   }
 
   writeProject() { }
@@ -169,13 +187,13 @@ export class OurProjectDetailComponent implements OnInit {
     console.warn(imageRef)
     this.imageListHolder = imageRef;
   }
-  
-	replaceSpacesWithUnderscores(inputString : string) {
-		return inputString.replace(/ /g, "_");
-	}
-	replaceSpacesWithSpacebar(inputString : string) {
-		return inputString.replace(/ /g, "_");
-	}
+
+  replaceSpacesWithUnderscores(inputString: string) {
+    return inputString.replace(/ /g, "_");
+  }
+  replaceSpacesWithSpacebar(inputString: string) {
+    return inputString.replace(/ /g, "_");
+  }
 }
 
 interface projectMenu {

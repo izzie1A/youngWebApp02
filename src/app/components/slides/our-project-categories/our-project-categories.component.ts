@@ -41,7 +41,8 @@ export class OurProjectCategoriesComponent {
   }
 
   async t() {
-    let result = await this.fbs.queryCondition(this.fbAddress, 20, "calgary", "==", this.getCat(), 'calgary');
+    let result = await this.fbs.queryCondition(this.fbAddress, 200, "calgary", "==", this.getCat(), 'calgary');
+    console.log(this.fbAddress,this.getCat());
     console.log(result);
     return result
   }
@@ -76,7 +77,7 @@ export class OurProjectCategoriesComponent {
     const myArray: string[] = this.router.url.split('/');
     let result = myArray[myArray.length - 1].toString();
     result = this.transformString(result);
-    return result
+    return result.toLowerCase();
   }
   // current
   getTitle(address: string) {

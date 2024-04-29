@@ -14,6 +14,9 @@ export class FirebaseControlService {
   constructor() {
     console.log('firebase control');
   }
+  t(address: string) {
+    return collectionData(collection(this.firestore, address));
+  }
   async queryCondition(
     address: string,
     amountLimit: number,
