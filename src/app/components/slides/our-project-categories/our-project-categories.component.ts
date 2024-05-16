@@ -41,13 +41,15 @@ export class OurProjectCategoriesComponent {
   }
 
   async t() {
-    let result = await this.fbs.queryCondition(this.fbAddress, 200, "calgary", "==", this.getCat(), 'calgary');
-    console.log(this.fbAddress,this.getCat());
+    let a = this.transformTitle(this.getCat())
+
+    let result = await this.fbs.queryCondition(this.fbAddress, 200, "calgary", "==", a, 'calgary');
+    console.log(this.fbAddress, this.getCat());
     console.log(result);
     return result
   }
 
-  
+
   getLocation(address: string) {
     const myArray: string[] = address.split('/');
     const capArray: string[] = myArray[myArray.length - 1].split(/(?=[A-Z])/);

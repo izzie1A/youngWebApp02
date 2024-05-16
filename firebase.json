@@ -3,7 +3,12 @@
     {
       "target": "youngWebApp02",
       "source": ".",
-      "frameworksBackend": {}
+      "frameworksBackend": {},
+      "ignore": [
+        "firebase.json",  
+        "**/.*",  
+        "**/node_modules/**"  
+      ]
     }
   ]
 }
